@@ -2068,12 +2068,12 @@ h2.section-title em { font-style: italic; color: var(--emerald); }
 
 /* ============ ANIMATIONS ============ */
 .fade-up {
-  opacity: 0;
+  opacity: 1;
   transform: translateY(20px);
-  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
-  will-change: opacity, transform;
+  transition: transform 0.7s var(--ease);
+  will-change: transform;
 }
-.fade-up.in { opacity: 1; transform: translateY(0); }
+.fade-up.in { transform: translateY(0); }
 
 .reveal {
   opacity: 0;
@@ -2169,6 +2169,7 @@ h2.section-title em { font-style: italic; color: var(--emerald); }
                src="project/assets/hero-marry-me.jpg"
                alt="Marry Me proposal on a palm-fringed beach in Punta Cana"
                loading="eager"
+               fetchpriority="high"
                decoding="async" />
 
           <div class="photo-badge">
