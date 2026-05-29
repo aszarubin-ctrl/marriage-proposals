@@ -1,0 +1,4139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Marriage Proposals DR — She'll Say Yes. We'll Handle the Rest.</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+
+<template id="__bundler_thumbnail" data-bg-color="#0A192F">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#0A192F"/>
+    <!-- Emerald heart silhouette -->
+    <path d="M600 540
+             C 600 540, 360 410, 360 280
+             C 360 215, 415 165, 480 165
+             C 535 165, 580 195, 600 240
+             C 620 195, 665 165, 720 165
+             C 785 165, 840 215, 840 280
+             C 840 410, 600 540, 600 540 Z"
+          fill="#0D7A5F"/>
+    <!-- Italic 'yes' wordmark -->
+    <text x="600" y="660"
+          text-anchor="middle"
+          font-family="Georgia, 'Instrument Serif', serif"
+          font-style="italic"
+          font-size="84"
+          fill="#FFFFFF"
+          letter-spacing="-2">yes.</text>
+  </svg>
+</template>
+<style>
+/* ====================================================================
+   THE CLEAN ARCHITECT — Marriage Proposals DR
+   ==================================================================== */
+
+/* ============ TOKENS ============ */
+:root {
+  --white:        #FFFFFF;
+  --gray-bg:      #F8F9FA;
+  --navy:         #0A192F;
+  --navy-2:       #112341;
+  --emerald:      #0D7A5F;
+  --emerald-dark: #0A614B;
+  --emerald-soft: rgba(13, 122, 95, 0.10);
+  --line:         #E2E8F0;
+  --line-dot:     #CBD5E1;
+  --ink:          #0A192F;
+  --ink-2:        #475569;
+  --ink-3:        #64748B;
+
+  --radius-lg: 12px;
+  --radius-sm: 6px;
+
+  --gutter: 24px;
+  --max-w: 1200px;
+
+  --pad-y: 120px;
+
+  --font-display: "Instrument Serif", "Cormorant Garamond", Georgia, serif;
+  --font-body: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --ease: cubic-bezier(.22,.61,.36,1);
+}
+
+@media (max-width: 860px) {
+  :root { --pad-y: 70px; }
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+/* ============ TYPE ============ */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin: 0 0 28px;
+}
+.eyebrow .dot { color: var(--line-dot); margin: 0 8px; }
+
+h1.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(44px, 5.6vw, 76px);
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin: 0 0 28px;
+  text-wrap: balance;
+}
+h1.display em { font-style: italic; color: var(--emerald); }
+
+h2.section-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(34px, 4vw, 54px);
+  line-height: 1.06;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin: 0 0 16px;
+  text-wrap: balance;
+}
+h2.section-title em { font-style: italic; color: var(--emerald); }
+.section-head--center { text-align: center; max-width: 780px; margin: 0 auto 64px; }
+.section-head--center h2.section-title { margin-bottom: 18px; }
+
+.lede {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--ink-2);
+  max-width: 520px;
+  margin: 0 0 32px;
+  text-wrap: pretty;
+}
+.lede b { color: var(--ink); font-weight: 600; }
+
+.section-sub {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--ink-2);
+  margin: 0;
+  text-wrap: pretty;
+}
+.section-head--center .section-sub { max-width: 640px; margin: 0 auto; }
+
+/* ============ HERO ============ */
+.hero {
+  background: var(--white);
+  padding-top: var(--pad-y);
+  padding-bottom: var(--pad-y);
+  overflow: hidden;
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+@media (max-width: 980px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 56px; }
+}
+.hero-left { min-width: 0; }
+
+.trust-row {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 36px 0 40px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+.trust {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 14.5px;
+  color: var(--ink-2);
+}
+.trust .icon {
+  width: 18px; height: 18px;
+  color: var(--ink-3);
+  flex: 0 0 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.trust .icon svg { width: 18px; height: 18px; }
+.trust b { color: var(--ink); font-weight: 600; }
+
+.cta-wrap { display: flex; flex-direction: column; gap: 14px; }
+.btn-primary {
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--emerald);
+  color: #fff;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.005em;
+  padding: 18px 28px;
+  border-radius: var(--radius-sm);
+  transition: all 0.3s var(--ease);
+  align-self: flex-start;
+  box-shadow: 0 1px 0 rgba(10,25,47,0.04);
+  text-decoration: none;
+}
+.btn-primary:hover {
+  background: var(--emerald-dark);
+  transform: scale(1.02);
+  box-shadow: 0 8px 22px -10px rgba(13, 122, 95, 0.55);
+}
+.btn-primary .wa-icon { width: 18px; height: 18px; }
+
+.subtext {
+  font-size: 13.5px;
+  color: var(--ink-3);
+  margin: 4px 0 0;
+  line-height: 1.5;
+}
+.subtext .sep { color: var(--line-dot); margin: 0 6px; }
+
+.imsg-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  font-size: 13.5px;
+  color: var(--ink-2);
+  text-decoration: none;
+}
+.imsg-link .imsg-icon { width: 18px; height: 18px; flex: 0 0 18px; }
+.imsg-link .imsg-label {
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s var(--ease), color 0.2s var(--ease);
+}
+.imsg-link:hover .imsg-label {
+  border-bottom-color: var(--ink-2);
+  color: var(--ink);
+}
+.imsg-link strong { color: var(--ink); font-weight: 600; }
+
+.hero-right { min-width: 0; }
+.photo-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #d9d2c4;
+  box-shadow: 0 30px 60px -30px rgba(10,25,47,0.25);
+}
+.photo-frame image-slot { --slot-bg: transparent; }
+.photo-frame .hero-photo-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.photo-frame::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at center,
+    rgba(10,25,47,0) 35%,
+    rgba(10,25,47,0.18) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+.photo-caption {
+  position: absolute;
+  left: 20px; bottom: 20px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+}
+.photo-caption .pin { width: 12px; height: 12px; color: var(--emerald); }
+
+.photo-badge {
+  position: absolute;
+  z-index: 3;
+  top: 20px; right: 20px;
+  background: var(--white);
+  color: var(--ink);
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  line-height: 1.3;
+  box-shadow: 0 10px 30px -10px rgba(10,25,47,0.25);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.photo-badge .num {
+  font-family: var(--font-display);
+  font-size: 28px;
+  line-height: 1;
+  color: var(--emerald);
+}
+.photo-badge .lbl {
+  font-size: 11px;
+  color: var(--ink-2);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.photo-badge .lbl b { display:block; color: var(--ink); font-size: 12px; letter-spacing: 0.02em; text-transform: none; margin-top: 2px;}
+
+/* ============ NUMBERS ============ */
+.numbers {
+  background: var(--gray-bg);
+  padding-top: var(--pad-y);
+  padding-bottom: var(--pad-y);
+}
+.numbers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-left: 1px solid var(--line);
+}
+.stat {
+  padding: 8px 32px;
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.stat .value {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(48px, 5.2vw, 68px);
+  line-height: 1;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+.stat .value .suffix { font-size: 0.55em; color: var(--emerald); margin-left: 4px; }
+.stat .value .prefix { font-size: 0.55em; color: var(--ink-3); margin-right: 4px; }
+.stat .label {
+  font-size: 13px;
+  color: var(--ink-2);
+  line-height: 1.45;
+  max-width: 200px;
+}
+.stat .label b { color: var(--ink); font-weight: 600; display: block; margin-bottom: 2px; font-size: 14px; }
+
+@media (max-width: 860px) {
+  .numbers-grid {
+    grid-template-columns: 1fr 1fr;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+  .stat {
+    padding: 28px 20px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .stat:nth-child(2n) { border-right: 0; }
+  .stat:nth-child(n+3) { border-bottom: 0; }
+}
+
+/* ============ BLOCK 3 — HOW IT WORKS (DARK) ============ */
+.how {
+  background: var(--navy);
+  color: #fff;
+  padding-top: var(--pad-y);
+  padding-bottom: var(--pad-y);
+}
+.how .section-title { color: #fff; }
+.how .section-title em { color: var(--emerald); }
+.how .section-sub { color: rgba(255,255,255,0.65); }
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+@media (max-width: 860px) { .steps-grid { grid-template-columns: 1fr; gap: 16px; } }
+
+.step-card {
+  position: relative;
+  padding: 36px 32px 32px;
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: var(--radius-lg);
+  background: transparent;
+  transition: background 0.35s var(--ease), border-color 0.35s var(--ease), transform 0.35s var(--ease);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.step-card:hover {
+  background: rgba(255,255,255,0.03);
+  border-color: rgba(255,255,255,0.22);
+}
+.step-card .step-num {
+  font-family: var(--font-display);
+  font-size: 56px;
+  line-height: 1;
+  color: var(--emerald);
+  letter-spacing: -0.01em;
+}
+.step-card h3 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 1.3;
+  margin: 0;
+  color: #fff;
+  letter-spacing: -0.005em;
+}
+.step-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.65);
+  margin: 0;
+}
+.step-card .step-arrow {
+  position: absolute;
+  right: 24px; top: 36px;
+  width: 18px; height: 18px;
+  color: rgba(255,255,255,0.25);
+  transition: color 0.35s var(--ease), transform 0.35s var(--ease);
+}
+.step-card:hover .step-arrow {
+  color: var(--emerald);
+  transform: translateX(4px);
+}
+
+/* Step 2 — video thumb strip */
+.video-strip {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.video-strip--wide {
+  flex-direction: column;
+  gap: 10px;
+}
+.video-strip--feature {
+  flex-direction: column;
+  gap: 8px;
+}
+.video-strip-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.video-thumb--mini .vt-dur {
+  font-size: 9px;
+  padding: 1px 5px;
+}
+.video-thumb--mini .vt-play {
+  width: 28px; height: 28px;
+}
+.video-thumb--mini .vt-play svg { width: 10px; height: 10px; }
+.video-thumb--hero .vt-caption {
+  position: absolute;
+  left: 12px; bottom: 10px;
+  z-index: 2;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+}
+.video-strip-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  margin: 0 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.video-strip-label::before,
+.video-strip-label::after {
+  content: "";
+  flex: 0 0 8px;
+  width: 8px; height: 1px;
+  background: var(--emerald);
+}
+.video-strip-label::after { flex: 1; max-width: 32px; }
+.video-thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: #1A2A47;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.10);
+  transition: transform 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+.video-thumb--wide {
+  aspect-ratio: 16 / 9;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.video-thumb .vt-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s var(--ease);
+}
+.video-thumb:hover .vt-img { transform: scale(1.04); }
+.video-thumb:hover {
+  transform: translateY(-2px);
+  border-color: var(--emerald);
+}
+.video-thumb image-slot { --slot-bg: transparent; }
+.video-thumb .vt-play {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: 32px; height: 32px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.92);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--navy);
+  z-index: 2;
+  transition: transform 0.25s var(--ease), background 0.25s var(--ease);
+}
+.video-thumb:hover .vt-play {
+  background: var(--emerald);
+  color: #fff;
+  transform: translate(-50%,-50%) scale(1.08);
+}
+.video-thumb .vt-play svg { width: 12px; height: 12px; margin-left: 2px; }
+.video-thumb .vt-dur {
+  position: absolute;
+  bottom: 6px; right: 6px;
+  z-index: 2;
+  background: rgba(10,25,47,0.78);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+.video-thumb .vt-shade {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.45));
+  z-index: 1;
+}
+.video-thumb--wide .vt-play {
+  width: 46px; height: 46px;
+}
+.video-thumb--wide .vt-play svg { width: 16px; height: 16px; }
+
+/* "Watch our proposal films" CTA link inside step card */
+.watch-films-link {
+  margin-top: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 16px 11px 12px;
+  border-radius: 999px;
+  background: rgba(13,122,95,0.14);
+  border: 1px solid rgba(13,122,95,0.45);
+  color: #fff;
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  align-self: flex-start;
+  transition: background 0.25s var(--ease), border-color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+.watch-films-link:hover {
+  background: var(--emerald);
+  border-color: var(--emerald);
+  transform: translateY(-1px);
+}
+.watch-films-link .wfl-icon {
+  width: 26px; height: 26px;
+  border-radius: 999px;
+  background: var(--emerald);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 26px;
+  transition: background 0.25s var(--ease);
+}
+.watch-films-link:hover .wfl-icon { background: #fff; color: var(--emerald); }
+.watch-films-link .wfl-icon svg { width: 11px; height: 11px; margin-left: 1px; }
+.watch-films-link .wfl-arrow { width: 14px; height: 14px; opacity: 0.7; transition: transform 0.25s var(--ease), opacity 0.25s var(--ease); }
+.watch-films-link:hover .wfl-arrow { transform: translateX(3px); opacity: 1; }
+.step-card--video { display: flex; flex-direction: column; }
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 14, 27, 0.86);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  z-index: 100;
+  opacity: 0;
+  transition: opacity 0.25s var(--ease);
+}
+.lightbox.is-open { display: flex; opacity: 1; }
+.lightbox-stage {
+  position: relative;
+  width: min(960px, 100%);
+  aspect-ratio: 16 / 9;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 40px 100px -20px rgba(0,0,0,0.7);
+  transform: scale(0.96);
+  transition: transform 0.3s var(--ease);
+}
+.lightbox.is-open .lightbox-stage { transform: scale(1); }
+.lightbox-video {
+  position: absolute;
+  inset: 0;
+  background: #000;
+}
+.lightbox-video iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+.lightbox-overlay {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  z-index: 3;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 22px 16px;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s var(--ease);
+}
+.lightbox.is-playing .lightbox-overlay { opacity: 0; pointer-events: none; }
+.lightbox-overlay .lb-tag {
+  align-self: flex-start;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+.lightbox-overlay .lb-cap {
+  color: #fff;
+  font-size: 14.5px;
+  line-height: 1.4;
+}
+.lightbox-overlay .lb-cap b { font-weight: 600; display: block; margin-bottom: 4px; }
+.lightbox-overlay .lb-cap small { color: rgba(255,255,255,0.65); font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; }
+.lightbox-close {
+  position: absolute;
+  top: -54px; right: -4px;
+  width: 40px; height: 40px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.20);
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  transition: background 0.2s var(--ease);
+}
+.lightbox-close:hover { background: rgba(255,255,255,0.20); }
+.lightbox-close svg { width: 16px; height: 16px; }
+
+/* ============ BLOCK 4 — PACKAGES ============ */
+.packages {
+  background: var(--white);
+  padding-top: var(--pad-y);
+  padding-bottom: var(--pad-y);
+}
+.pkg-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+@media (max-width: 980px) { .pkg-grid { grid-template-columns: 1fr; gap: 20px; } }
+
+.pkg-card {
+  position: relative;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: box-shadow 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.pkg-card:hover {
+  box-shadow: 0 24px 60px -30px rgba(10,25,47,0.22);
+}
+.pkg-card--popular {
+  transform: translateY(-10px);
+  box-shadow:
+    0 0 0 1px rgba(13,122,95,0.20),
+    0 30px 60px -30px rgba(10,25,47,0.25);
+}
+.pkg-card--popular:hover {
+  box-shadow:
+    0 0 0 1px rgba(13,122,95,0.30),
+    0 36px 80px -30px rgba(10,25,47,0.30);
+}
+@media (max-width: 980px) {
+  .pkg-card--popular { transform: none; }
+}
+
+.pkg-ribbon {
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  background: var(--navy);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 7px 18px 6px;
+  border-bottom-left-radius: var(--radius-sm);
+  border-bottom-right-radius: var(--radius-sm);
+  z-index: 2;
+}
+
+.pkg-photo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: #e7e1d4;
+  margin: 0;
+}
+.pkg-photo-wrap { padding: 16px 16px 0; position: relative; }
+
+/* Package vibe badges — sit above the photo gallery */
+.pkg-badges {
+  position: absolute;
+  top: 26px; left: 26px; right: 26px;
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  pointer-events: none;
+}
+.pkg-badge {
+  background: rgba(10,25,47,0.78);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 5px 9px;
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.10);
+}
+
+/* Package gallery (mini-slider per tab) */
+.pkg-galleries {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: #e7e1d4;
+}
+.pkg-gallery {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s var(--ease);
+}
+.pkg-gallery.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.pkg-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.45s var(--ease);
+}
+.pkg-slide.is-active { opacity: 1; }
+.pkg-slide image-slot { --slot-bg: transparent; }
+.pkg-slide-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 6px;
+}
+.pkg-slide-tag {
+  position: absolute;
+  left: 12px; bottom: 12px;
+  z-index: 2;
+  background: rgba(10,25,47,0.78);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 5px 9px;
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 32px; height: 32px;
+  border-radius: 999px;
+  border: 0;
+  background: rgba(255,255,255,0.92);
+  color: var(--navy);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s var(--ease), transform 0.2s var(--ease);
+  opacity: 0;
+}
+.pkg-galleries:hover .gallery-nav { opacity: 1; }
+.gallery-nav:hover { background: #fff; transform: translateY(-50%) scale(1.06); }
+.gallery-nav.prev { left: 10px; }
+.gallery-nav.next { right: 10px; }
+.gallery-nav svg { width: 14px; height: 14px; }
+.gallery-dots {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 12px;
+  z-index: 3;
+  display: flex;
+  gap: 6px;
+}
+.gallery-dot {
+  width: 18px; height: 4px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.45);
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.2s var(--ease), width 0.2s var(--ease);
+}
+.gallery-dot.is-active { background: #fff; width: 22px; }
+
+.pkg-body {
+  padding: 22px 24px 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 14px;
+}
+.pkg-title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin: 0;
+}
+.pkg-name {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.05;
+  color: var(--ink);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.pkg-desc {
+  font-size: 14.5px;
+  color: var(--ink-2);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Tabs */
+.pkg-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+.pkg-tab {
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  background: var(--gray-bg);
+  color: var(--ink-2);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.01em;
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  transition: background 0.2s var(--ease), color 0.2s var(--ease);
+  white-space: nowrap;
+}
+.pkg-tab:hover { background: #EEF1F4; color: var(--ink); }
+.pkg-tab.is-active {
+  background: var(--navy);
+  color: #fff;
+}
+
+.pkg-dyn {
+  min-height: 0;
+  transition: opacity 0.2s var(--ease);
+}
+.pkg-dyn.is-fading { opacity: 0; }
+.pkg-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.pkg-features li {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink-2);
+  padding-left: 22px;
+  position: relative;
+}
+.pkg-features li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 8px;
+  width: 12px; height: 1px;
+  background: var(--emerald);
+}
+.pkg-stay {
+  font-size: 12px;
+  color: var(--ink-3);
+  margin-top: 4px;
+  padding-left: 22px;
+}
+.pkg-stay b { color: var(--ink); font-weight: 600; }
+
+.pkg-footer {
+  padding: 22px 24px 24px;
+  border-top: 1px solid var(--line);
+  margin-top: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.pkg-price-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+.pkg-price {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 1;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  transition: opacity 0.2s var(--ease);
+}
+.pkg-price.is-fading { opacity: 0; }
+.pkg-price-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.pkg-cta {
+  width: 100%;
+  justify-content: center;
+}
+.pkg-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 12.5px;
+  color: var(--ink-2);
+  cursor: pointer;
+  user-select: none;
+  line-height: 1.4;
+}
+.pkg-checkbox input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.pkg-checkbox .cb-box {
+  width: 16px; height: 16px;
+  border-radius: 4px;
+  border: 1.5px solid var(--line-dot);
+  flex: 0 0 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: transparent;
+  transition: all 0.2s var(--ease);
+}
+.pkg-checkbox input:checked + .cb-box {
+  background: var(--emerald);
+  border-color: var(--emerald);
+  color: #fff;
+}
+.pkg-checkbox .cb-box svg { width: 10px; height: 10px; }
+.pkg-checkbox b { color: var(--ink); font-weight: 600; }
+
+/* Exclusive masterpiece — restructured */
+.exclusive {
+  margin-top: 32px;
+  background: var(--navy);
+  color: #fff;
+  border-radius: var(--radius-lg);
+  padding: 44px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  position: relative;
+  overflow: hidden;
+}
+@media (max-width: 860px) {
+  .exclusive { padding: 28px; gap: 24px; }
+}
+.exclusive::before {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0; right: -10%;
+  width: 60%;
+  background: radial-gradient(ellipse at right, rgba(13,122,95,0.18), transparent 70%);
+  pointer-events: none;
+}
+.exclusive > * { position: relative; z-index: 1; }
+
+.exclusive-top {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: flex-start;
+}
+@media (max-width: 860px) {
+  .exclusive-top { grid-template-columns: 1fr; gap: 20px; }
+}
+.exclusive-headline { min-width: 0; }
+.exclusive-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  margin: 0 0 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.exclusive-eyebrow::before {
+  content: "";
+  width: 6px; height: 6px;
+  border-radius: 999px;
+  background: var(--emerald);
+}
+.exclusive-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(32px, 3.6vw, 44px);
+  line-height: 1.05;
+  margin: 0 0 12px;
+  letter-spacing: -0.01em;
+}
+.exclusive-scale {
+  font-size: 15px;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.72);
+  margin: 0;
+  max-width: 580px;
+}
+.exclusive-scale b { color: #fff; font-weight: 600; }
+
+.exclusive-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+  text-align: right;
+}
+@media (max-width: 860px) {
+  .exclusive-right { align-items: flex-start; text-align: left; }
+}
+.exclusive-price-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin: 0;
+}
+.exclusive-price {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 4.6vw, 56px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.exclusive-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.10);
+}
+
+.exclusive-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+}
+@media (max-width: 860px) {
+  .exclusive-grid { grid-template-columns: 1fr; gap: 28px; }
+}
+
+.exclusive-group {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.exclusive-group h4 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  margin: 0;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(13,122,95,0.30);
+}
+.exclusive-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.exclusive-list li {
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.82);
+  padding-left: 26px;
+  position: relative;
+}
+.exclusive-list li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 9px;
+  width: 14px; height: 1px;
+  background: var(--emerald);
+}
+.exclusive-list li .qty {
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 1.1em;
+  line-height: 1;
+  font-weight: 400;
+  margin-right: 2px;
+}
+.exclusive-list li b { color: #fff; font-weight: 600; }
+
+/* ============ BLOCK 5 — ADD-ONS ============ */
+.addons {
+  background: var(--gray-bg);
+  padding-top: var(--pad-y);
+  padding-bottom: var(--pad-y);
+}
+.addons-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 56px;
+  flex-wrap: wrap;
+}
+.addons-head h2 { margin: 0; max-width: 540px; }
+
+.addon-total {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 12px 18px;
+}
+.addon-total-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.addon-total-val {
+  font-family: var(--font-display);
+  font-size: 24px;
+  line-height: 1;
+  color: var(--ink);
+}
+.addon-total-val .plus { color: var(--emerald); margin-right: 2px; font-size: 0.7em; }
+
+.addons-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 56px;
+}
+@media (max-width: 860px) { .addons-grid { grid-template-columns: 1fr; gap: 0; } }
+
+.addon-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: baseline;
+  column-gap: 14px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+.addon-name {
+  font-size: 15.5px;
+  color: var(--ink);
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.addon-name small {
+  font-size: 12px;
+  color: var(--ink-3);
+  font-weight: 400;
+  line-height: 1.45;
+}
+.addon-dots {
+  border-bottom: 2px dotted var(--line-dot);
+  height: 1px;
+  align-self: end;
+  margin: 0 6px 6px;
+  min-width: 30px;
+}
+.addon-price {
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--ink);
+  line-height: 1;
+  white-space: nowrap;
+}
+.addon-add {
+  grid-column: 3;
+  margin-left: 14px;
+  align-self: center;
+}
+.addon-row {
+  grid-template-columns: 1fr auto auto auto;
+}
+
+.addon-btn {
+  appearance: none;
+  cursor: pointer;
+  background: transparent;
+  color: var(--emerald);
+  border: 1px solid var(--emerald);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  padding: 7px 12px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+  transition: all 0.2s var(--ease);
+}
+.addon-btn:hover {
+  background: var(--emerald-soft);
+}
+.addon-btn .ico {
+  width: 10px; height: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.addon-btn .ico svg { width: 100%; height: 100%; }
+.addon-btn[data-added="true"] {
+  background: var(--emerald);
+  color: #fff;
+  border-color: var(--emerald);
+}
+.addon-btn[data-added="true"]:hover { background: var(--emerald-dark); border-color: var(--emerald-dark); }
+.addon-btn .label-add { display: inline; }
+.addon-btn .label-added { display: none; }
+.addon-btn[data-added="true"] .label-add { display: none; }
+.addon-btn[data-added="true"] .label-added { display: inline; }
+.addon-btn .ico-plus { display: inline-flex; }
+.addon-btn .ico-check { display: none; }
+.addon-btn[data-added="true"] .ico-plus { display: none; }
+.addon-btn[data-added="true"] .ico-check { display: inline-flex; }
+
+/* ============ BLOCK 6 — RETRO CARS ============ */
+.cars {
+  background: var(--white);
+  padding-top: var(--pad-y);
+  padding-bottom: var(--pad-y);
+}
+.cars-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+.cars-head-text { max-width: 640px; }
+.cars-head h2 { margin: 0 0 14px; }
+.cars-head .section-sub { max-width: 540px; }
+.cars-nav {
+  display: flex;
+  gap: 8px;
+}
+@media (max-width: 640px) { .cars-nav { display: none; } }
+.cars-nav-btn {
+  width: 46px; height: 46px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--ink);
+  cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center;
+  transition: all 0.2s var(--ease);
+}
+.cars-nav-btn:hover {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+}
+.cars-nav-btn:disabled {
+  opacity: 0.35;
+  pointer-events: none;
+}
+.cars-nav-btn svg { width: 16px; height: 16px; }
+
+.cars-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding-bottom: 4px;
+  /* allow box-shadow overflow */
+  margin: -8px;
+  padding: 8px;
+}
+.cars-track::-webkit-scrollbar { display: none; }
+
+.car-card {
+  flex: 0 0 calc((100% - 40px) / 3);
+  scroll-snap-align: start;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.car-card:hover {
+  box-shadow: 0 24px 50px -25px rgba(10,25,47,0.22);
+}
+
+.car-photo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: #e0d9cc;
+  overflow: hidden;
+}
+.car-photo .car-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s var(--ease);
+}
+.car-card:hover .car-photo .car-img {
+  transform: scale(1.05);
+}
+.car-photo image-slot { --slot-bg: transparent; }
+.car-photo .car-img-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.car-photo::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(10,25,47,0) 55%, rgba(10,25,47,0.28) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+.car-photo .car-badge {
+  position: absolute;
+  top: 14px; left: 14px;
+  z-index: 2;
+  background: rgba(255,255,255,0.94);
+  color: var(--ink);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.car-body {
+  padding: 22px 22px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+.car-year {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--emerald);
+}
+.car-name {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 1.1;
+  color: var(--ink);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.car-sub {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink-2);
+  margin: 0;
+  flex: 1;
+}
+.car-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  gap: 12px;
+}
+.car-price {
+  font-family: var(--font-display);
+  font-size: 22px;
+  line-height: 1;
+  color: var(--ink);
+}
+
+/* Car +Add button — same family as addon-btn */
+.car-add {
+  appearance: none;
+  cursor: pointer;
+  background: transparent;
+  color: var(--emerald);
+  border: 1px solid var(--emerald);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 12.5px;
+  letter-spacing: 0.02em;
+  padding: 9px 14px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s var(--ease);
+  white-space: nowrap;
+}
+.car-add:hover { background: var(--emerald-soft); }
+.car-add[data-added="true"] {
+  background: var(--emerald);
+  color: #fff;
+  border-color: var(--emerald);
+}
+.car-add[data-added="true"]:hover { background: var(--emerald-dark); border-color: var(--emerald-dark); }
+.car-add .ico {
+  width: 11px; height: 11px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.car-add .ico svg { width: 100%; height: 100%; }
+.car-add .label-add { display: inline; }
+.car-add .label-added { display: none; }
+.car-add[data-added="true"] .label-add { display: none; }
+.car-add[data-added="true"] .label-added { display: inline; }
+.car-add .ico-plus { display: inline-flex; }
+.car-add .ico-check { display: none; }
+.car-add[data-added="true"] .ico-plus { display: none; }
+.car-add[data-added="true"] .ico-check { display: inline-flex; }
+
+.cars-dots {
+  display: none;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+.cars-dots .gallery-dot {
+  width: 24px; height: 4px;
+  background: var(--line);
+}
+.cars-dots .gallery-dot.is-active {
+  background: var(--ink);
+  width: 30px;
+}
+
+.cars-note {
+  font-size: 12.5px;
+  color: var(--ink-3);
+  margin: 28px auto 0;
+  font-style: italic;
+  line-height: 1.55;
+  text-align: center;
+  max-width: 640px;
+}
+.cars-note b { color: var(--ink-2); font-style: normal; font-weight: 600; }
+
+@media (max-width: 980px) {
+  .car-card { flex: 0 0 calc((100% - 20px) / 2); }
+}
+@media (max-width: 640px) {
+  .car-card { flex: 0 0 100%; }
+  .cars-dots { display: flex; }
+}
+
+/* ============ BLOCK 6 — REVIEWS ============ */
+.reviews {
+  background: var(--white);
+  padding-top: var(--pad-y);
+  padding-bottom: var(--pad-y);
+}
+.reviews-masonry {
+  column-count: 3;
+  column-gap: 24px;
+}
+@media (max-width: 980px) { .reviews-masonry { column-count: 2; } }
+@media (max-width: 640px) { .reviews-masonry { column-count: 1; } }
+
+.review-card {
+  display: inline-block;
+  width: 100%;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 0 0 22px;
+  margin: 0 0 24px;
+  break-inside: avoid;
+  position: relative;
+  overflow: hidden;
+}
+.review-photo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: #d6d0c4;
+  overflow: hidden;
+}
+.review-photo image-slot { --slot-bg: transparent; }
+.review-photo .review-photo-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.review-photo::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(10,25,47,0) 60%, rgba(10,25,47,0.20) 100%);
+  pointer-events: none;
+}
+.review-photo .moment-tag {
+  position: absolute;
+  left: 14px; bottom: 14px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.92);
+  color: var(--ink);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 5px 9px;
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.review-photo .moment-tag::before {
+  content: "";
+  width: 6px; height: 6px;
+  border-radius: 999px;
+  background: var(--emerald);
+}
+.review-body { padding: 22px 26px 0; }
+.review-flag {
+  position: absolute;
+  top: 14px; right: 14px;
+  width: 36px; height: 36px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.6);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.95);
+  overflow: hidden;
+  font-size: 18px;
+  line-height: 1;
+  z-index: 3;
+  box-shadow: 0 4px 12px -4px rgba(10,25,47,0.3);
+}
+.review-stars {
+  color: var(--emerald);
+  letter-spacing: 0.05em;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+.review-quote {
+  font-size: 15.5px;
+  line-height: 1.55;
+  color: var(--ink);
+  margin: 0 0 18px;
+  text-wrap: pretty;
+}
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 26px 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.review-avatar {
+  width: 36px; height: 36px;
+  border-radius: 999px;
+  background: var(--gray-bg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-2);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  flex: 0 0 36px;
+}
+.review-meta { display: flex; flex-direction: column; }
+.review-meta .name { font-size: 14px; font-weight: 600; color: var(--ink); }
+.review-meta .when { font-size: 12px; color: var(--ink-3); }
+
+/* Text-only review cards (no photo) */
+.review-card--text .review-body { padding-top: 26px; }
+.review-card--text .review-quote { color: var(--ink-2); }
+
+/* Reviews — Google Maps outline button */
+.reviews-cta-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 44px;
+}
+.btn-google-reviews {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  padding: 13px 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  color: var(--ink-2);
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  transition: border-color 0.25s var(--ease), color 0.25s var(--ease), box-shadow 0.25s var(--ease), transform 0.25s var(--ease);
+}
+.btn-google-reviews:hover {
+  border-color: var(--line-dot);
+  color: var(--ink);
+  box-shadow: 0 6px 20px -10px rgba(10,25,47,0.25);
+  transform: translateY(-1px);
+}
+.btn-google-reviews .g-icon {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+}
+
+/* ============ BLOCK 7 — SOFIA ============ */
+.sofia {
+  background: var(--gray-bg);
+  padding-top: var(--pad-y);
+  padding-bottom: var(--pad-y);
+}
+.sofia-grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 64px;
+  align-items: center;
+}
+@media (max-width: 860px) {
+  .sofia-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+.sofia-collage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 10px;
+}
+.sofia-collage .sc-main {
+  grid-column: 1 / 3;
+  grid-row: 1;
+  aspect-ratio: 4 / 3;
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #d6d0c4;
+  box-shadow: 0 30px 60px -30px rgba(10,25,47,0.25);
+}
+.sofia-collage .sc-small {
+  aspect-ratio: 1 / 1;
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #d6d0c4;
+}
+.sofia-collage .sc-main image-slot,
+.sofia-collage .sc-small image-slot { --slot-bg: transparent; }
+.sofia-collage .sc-cap {
+  position: absolute;
+  left: 12px; bottom: 12px;
+  z-index: 2;
+  background: rgba(10,25,47,0.78);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 5px 9px;
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.sofia-photo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #d6d0c4;
+  box-shadow: 0 30px 60px -30px rgba(10,25,47,0.25);
+}
+.sofia-photo image-slot { --slot-bg: transparent; }
+.sofia-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  margin: 0 0 18px;
+}
+.sofia-quote {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(26px, 2.6vw, 34px);
+  line-height: 1.25;
+  color: var(--ink);
+  margin: 0 0 28px;
+  letter-spacing: -0.005em;
+  text-wrap: pretty;
+}
+.sofia-quote::before {
+  content: "“";
+  font-family: var(--font-display);
+  display: block;
+  font-size: 80px;
+  line-height: 0.5;
+  color: var(--emerald);
+  margin-bottom: 18px;
+}
+.sofia-byline {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 14px;
+  color: var(--ink-2);
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+.sofia-byline b { color: var(--ink); font-weight: 600; }
+.sofia-byline .sep { color: var(--line-dot); }
+.sofia-byline .pin { width: 14px; height: 14px; color: var(--emerald); display: inline-flex; }
+
+/* ============ BLOCK 8 — FAQ ============ */
+.faq {
+  background: var(--white);
+  padding-top: var(--pad-y);
+  padding-bottom: var(--pad-y);
+}
+.faq-wrap { max-width: 800px; margin: 0 auto; }
+.faq-list { border-top: 1px solid var(--line); }
+.faq-item { border-bottom: 1px solid var(--line); }
+.faq-question {
+  appearance: none;
+  width: 100%;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 28px 4px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+  line-height: 1.4;
+  transition: color 0.2s var(--ease);
+}
+.faq-question:hover { color: var(--emerald); }
+.faq-toggle {
+  width: 24px; height: 24px;
+  flex: 0 0 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s var(--ease), color 0.25s var(--ease);
+  color: var(--ink-3);
+}
+.faq-toggle svg { width: 100%; height: 100%; }
+.faq-item[data-open="true"] .faq-toggle {
+  transform: rotate(45deg);
+  color: var(--emerald);
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s var(--ease);
+}
+.faq-answer-inner {
+  padding: 0 4px 28px;
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: var(--ink-2);
+  max-width: 680px;
+}
+.faq-answer-inner p { margin: 0 0 12px; }
+.faq-answer-inner p:last-child { margin-bottom: 0; }
+.faq-answer-inner b { color: var(--ink); font-weight: 600; }
+
+.pay-logos {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 14px;
+  padding: 16px 18px;
+  background: var(--gray-bg);
+  border-radius: var(--radius-sm);
+  flex-wrap: wrap;
+}
+.pay-logos .lbl {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-right: 6px;
+}
+.pay-logos .pay-logo {
+  height: 18px;
+  opacity: 0.55;
+  filter: grayscale(1);
+  transition: opacity 0.6s var(--ease), filter 0.6s var(--ease);
+}
+.faq-item[data-open="true"] .pay-logos .pay-logo {
+  opacity: 1;
+  filter: grayscale(0);
+}
+.faq-item[data-open="true"] .pay-logos .pay-logo:nth-child(2) { transition-delay: 0.05s; }
+.faq-item[data-open="true"] .pay-logos .pay-logo:nth-child(3) { transition-delay: 0.10s; }
+.faq-item[data-open="true"] .pay-logos .pay-logo:nth-child(4) { transition-delay: 0.15s; }
+
+/* ============ BLOCK 9 — FINAL CTA ============ */
+.final-cta {
+  background: var(--navy);
+  color: #fff;
+  padding-top: var(--pad-y);
+  padding-bottom: var(--pad-y);
+  text-align: center;
+}
+.final-cta h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  color: #fff;
+  margin: 0 auto 22px;
+  max-width: 820px;
+  text-wrap: balance;
+}
+.final-cta h2 em { font-style: italic; color: var(--emerald); }
+.final-cta .section-sub {
+  color: rgba(255,255,255,0.65);
+  max-width: 580px;
+  margin: 0 auto 44px;
+}
+
+.btn-primary--xl {
+  font-size: 17px;
+  padding: 22px 36px;
+  align-self: center;
+}
+.btn-primary--pulse {
+  position: relative;
+  animation: pulse 3s var(--ease) infinite;
+}
+@keyframes pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 0 0 rgba(13, 122, 95, 0.55),
+      0 8px 22px -10px rgba(13, 122, 95, 0.55);
+  }
+  50% {
+    box-shadow:
+      0 0 0 18px rgba(13, 122, 95, 0),
+      0 8px 22px -10px rgba(13, 122, 95, 0.55);
+  }
+}
+.btn-primary--xl:hover { animation-play-state: paused; }
+
+.final-cta .imsg-link {
+  color: rgba(255,255,255,0.7);
+  margin-top: 24px;
+}
+.final-cta .imsg-link:hover .imsg-label { color: #fff; border-bottom-color: rgba(255,255,255,0.6); }
+.final-cta .imsg-link strong { color: #fff; }
+.final-cta .final-foot {
+  margin-top: 28px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.55;
+}
+
+/* ============ FOOTER ============ */
+.footer {
+  background: var(--navy);
+  color: rgba(255,255,255,0.45);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 36px 0;
+  font-size: 12.5px;
+  letter-spacing: 0.02em;
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.footer a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s var(--ease); }
+.footer a:hover { color: #fff; }
+.footer-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.footer-contact a { color: rgba(255,255,255,0.85); border-bottom: 1px solid rgba(255,255,255,0.18); padding-bottom: 1px; }
+.footer-contact a:hover { color: #fff; border-bottom-color: rgba(255,255,255,0.6); }
+.footer-sep { color: rgba(255,255,255,0.25); }
+.faq-answer-inner a {
+  color: var(--emerald);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(13,122,95,0.30);
+  padding-bottom: 1px;
+  transition: border-color 0.2s var(--ease);
+}
+.faq-answer-inner a:hover {
+  border-bottom-color: var(--emerald);
+}
+
+/* ============ ANIMATIONS ============ */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+  will-change: opacity, transform;
+}
+.fade-up.in { opacity: 1; transform: translateY(0); }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+.reveal.in { opacity: 1; transform: translateY(0); }
+.reveal-stagger > * { transition-delay: calc(var(--i, 0) * 90ms); }
+
+/* ============ UTIL ============ */
+.show-desktop { display: inline; }
+@media (max-width: 980px) { .show-desktop { display: none; } }
+
+</style>
+</head>
+<body>
+
+<!-- ============================================================ -->
+<!-- BLOCK 1 — HERO                                               -->
+<!-- ============================================================ -->
+<section class="hero" data-screen-label="01 Hero">
+  <div class="container">
+    <div class="hero-inner">
+
+      <div class="hero-left">
+
+        <p class="eyebrow fade-up" data-delay="0">
+          Punta Cana <span class="dot">·</span> Dominican Republic <span class="dot">·</span> Since 2020
+        </p>
+
+        <h1 class="display fade-up" data-delay="100">
+          She'll say <em>yes</em>.<br />
+          We'll handle the rest.
+        </h1>
+
+        <p class="lede fade-up" data-delay="200">
+          <b>650+ marriage proposals in Punta Cana with zero disasters.</b>
+          You pick the ring — we manage luxury decor, professional photography,
+          chilled champagne, and private sunset transfer. <b>From $960.</b>
+        </p>
+
+        <div class="trust-row fade-up" data-delay="300">
+          <div class="trust">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V6l8-3z"/></svg>
+            </span>
+            <span><b>⭐ 5/5 on Google</b> · 29 Verified Reviews</span>
+          </div>
+          <div class="trust">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg>
+            </span>
+            <span><b>650+ couples</b> from USA, Canada &amp; Europe</span>
+          </div>
+          <div class="trust">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+            </span>
+            <span><b>Secure booking</b> &amp; flexible weather rescheduling</span>
+          </div>
+        </div>
+
+        <div class="cta-wrap fade-up" data-delay="400">
+          <a href="#" class="btn-primary" aria-label="Check availability via WhatsApp">
+            <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.6.1l-.9 1.1c-.2.2-.4.2-.7.1-.3-.2-1.2-.5-2.4-1.5-.9-.8-1.4-1.8-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.5l-.8-2c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 .9-1 2.3s1 2.7 1.1 2.9c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.3-.5-.4zM12 2.2C6.6 2.2 2.2 6.6 2.2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.4 0 9.8-4.4 9.8-9.8S17.4 2.2 12 2.2z"/>
+            </svg>
+            Check availability for your dates
+          </a>
+          <p class="subtext">
+            We reply within <b style="color:var(--ink);font-weight:600">10 minutes</b>
+            <span class="sep">·</span> Mon–Sat, 9am–8pm EST
+          </p>
+          <a class="imsg-link show-desktop" href="sms:+18296627835">
+            <svg class="imsg-icon" viewBox="0 0 64 64" aria-hidden="true">
+              <defs>
+                <linearGradient id="imsgGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#5BF675"/>
+                  <stop offset="1" stop-color="#0CBD2A"/>
+                </linearGradient>
+              </defs>
+              <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#imsgGrad)"/>
+              <path fill="#fff" d="M32 14c-10.5 0-19 7.2-19 16 0 5 2.7 9.5 7 12.3-.4 2-1.4 4.5-3.1 6.3-.4.4-.1 1.1.5 1 4.4-.5 8-2.7 9.6-3.8 1.6.3 3.3.5 5 .5 10.5 0 19-7.2 19-16S42.5 14 32 14z"/>
+            </svg>
+            <span class="imsg-label">Or text via <strong>iMessage / SMS</strong>: <strong>+1 (829) 662-7835</strong></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-right fade-up" data-delay="200">
+        <div class="photo-frame">
+          <img class="hero-photo-img"
+               src="project/assets/hero-marry-me.jpg"
+               alt="Marry Me proposal on a palm-fringed beach in Punta Cana"
+               loading="eager"
+               decoding="async" />
+
+          <div class="photo-badge">
+            <span class="num">650<span style="font-size:18px;">+</span></span>
+            <span class="lbl">since 2020<b>zero disasters</b></span>
+          </div>
+
+          <div class="photo-caption">
+            <svg class="pin" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8 2 5 5 5 9c0 5.3 7 13 7 13s7-7.7 7-13c0-4-3-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+            Bounty Beach · Punta Cana
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- BLOCK 2 — NUMBERS                                            -->
+<!-- ============================================================ -->
+<section class="numbers" data-screen-label="02 Numbers">
+  <div class="container">
+    <div class="numbers-grid" id="numbersGrid">
+
+      <div class="stat">
+        <div class="value">
+          <span class="num-counter" data-to="650">0</span><span class="suffix">+</span>
+        </div>
+        <div class="label"><b>Successful proposals</b>Since 2020, every single one</div>
+      </div>
+
+      <div class="stat">
+        <div class="value">
+          <span class="num-counter" data-to="5" data-decimals="0">0</span><span style="font-family:var(--font-display);color:var(--ink-3);margin:0 .1em;">/</span><span>5</span>
+        </div>
+        <div class="label"><b>Google rating</b>29 verified reviews</div>
+      </div>
+
+      <div class="stat">
+        <div class="value">
+          <span class="num-counter" data-to="10">0</span>
+          <span class="suffix">min</span>
+        </div>
+        <div class="label"><b>Response time</b>Real coordinator, not a bot</div>
+      </div>
+
+      <div class="stat">
+        <div class="value">
+          <span class="prefix">$</span><span class="num-counter" data-to="960">0</span>
+        </div>
+        <div class="label"><b>Starting price</b>All inclusive · transparent</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- BLOCK 3 — HOW IT WORKS                                       -->
+<!-- ============================================================ -->
+<section class="how" data-screen-label="03 How it works">
+  <div class="container">
+    <div class="section-head--center reveal">
+      <h2 class="section-title">You've got <em>one shot</em>.<br />We've done this 650 times.</h2>
+      <p class="section-sub">Proposing in a foreign country feels risky. Here's how we eliminate your anxiety at every step.</p>
+    </div>
+
+    <div class="steps-grid reveal-stagger">
+      <article class="step-card reveal" style="--i:0;">
+        <div class="step-num">01</div>
+        <svg class="step-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        <h3>Choose your vibe &amp; lock the date</h3>
+        <p>You message us on WhatsApp. No rigid forms or sales pitches. A real coordinator guides you through locations and checks availability for your dates — in 10 minutes.</p>
+      </article>
+
+      <article class="step-card step-card--video reveal" style="--i:1;">
+        <div class="step-num">02</div>
+        <svg class="step-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        <h3>Cinematic video proof (real couples)</h3>
+        <p>Worried about the final result? Watch real, fully produced 3–4 minute cinematic films from our recent proposals on the beach. See the exact framing, lighting quality, and emotional reactions you will receive.</p>
+
+        <p class="video-strip-label">Recent proposal films</p>
+        <div class="video-strip video-strip--feature">
+          <a class="video-thumb video-thumb--wide video-thumb--hero" href="https://www.youtube.com/watch?v=LIvKss3JtsQ" data-yt-id="LIvKss3JtsQ" data-lb-tag="Film · 3:42" data-lb-title="Sunset proposal at Bounty Beach" data-lb-sub="Cinematic film · 2025">
+            <img class="vt-img" src="https://img.youtube.com/vi/LIvKss3JtsQ/hqdefault.jpg" alt="Cinematic proposal film — sunset at Bounty Beach" loading="lazy" />
+            <div class="vt-shade"></div>
+            <span class="vt-dur">3:42</span>
+            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="vt-caption">Sunset · Bounty Beach</span>
+          </a>
+          <div class="video-strip-row">
+            <a class="video-thumb video-thumb--wide video-thumb--mini" href="https://www.youtube.com/watch?v=TEY72R1Km_U" data-yt-id="TEY72R1Km_U" data-lb-tag="Film · 3:18" data-lb-title="MARRY ME neon proposal" data-lb-sub="Cinematic film · 2025">
+              <img class="vt-img" src="https://img.youtube.com/vi/TEY72R1Km_U/hqdefault.jpg" alt="Cinematic proposal film — MARRY ME neon" loading="lazy" />
+              <div class="vt-shade"></div>
+              <span class="vt-dur">3:18</span>
+              <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+            </a>
+            <a class="video-thumb video-thumb--wide video-thumb--mini" href="https://www.youtube.com/watch?v=UedhWMsip6Y" data-yt-id="UedhWMsip6Y" data-lb-tag="Film · 4:05" data-lb-title="Rose heart luxury proposal" data-lb-sub="Cinematic film · 2025">
+              <img class="vt-img" src="https://img.youtube.com/vi/UedhWMsip6Y/hqdefault.jpg" alt="Cinematic proposal film — rose heart luxury" loading="lazy" />
+              <div class="vt-shade"></div>
+              <span class="vt-dur">4:05</span>
+              <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+            </a>
+          </div>
+        </div>
+
+      </article>
+
+      <article class="step-card reveal" style="--i:2;">
+        <div class="step-num">03</div>
+        <svg class="step-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        <h3>Flawless execution on the beach</h3>
+        <p>Our team arrives two hours before you walk in. Candles lit, photographer hidden, champagne chilled. You arrive via private transfer and ask the question.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- BLOCK 4 — PACKAGES                                           -->
+<!-- ============================================================ -->
+<section class="packages" data-screen-label="04 Packages">
+  <div class="container">
+    <div class="section-head--center reveal">
+      <h2 class="section-title">Choose your setup. <em>We handle the rest.</em></h2>
+      <p class="section-sub">All packages include private beach rental (Bounty Beach), round-trip transfer from your hotel, a professional photographer, chilled champagne, music, and snacks.</p>
+    </div>
+
+    <div class="pkg-grid">
+
+      <!-- ============ CARD 1 — CLASSIC MAGIC ============ -->
+      <article class="pkg-card reveal" style="--i:0;">
+        <div class="pkg-photo-wrap">
+          <div class="pkg-galleries" data-pkg="c1">
+            <div class="pkg-gallery is-active" data-tab="c1-sunset">
+              <div class="pkg-slide is-active"><img class="pkg-slide-img" src="project/uploads/1-1.jpg" alt="Sunset Tent — wide shot" loading="lazy" /><span class="pkg-slide-tag">COZY · BEACH · SETUP</span></div>
+              <div class="pkg-slide"><img class="pkg-slide-img" src="project/uploads/1-2.jpg" alt="Sunset Tent — detail" loading="lazy" /><span class="pkg-slide-tag">ANIMATE ·VIBE</span></div>
+              <div class="pkg-slide"><img class="pkg-slide-img" src="project/uploads/1-3.jpg" alt="Sunset Tent — teepee setup" loading="lazy" data-comment-anchor="599bf6c6ba-image-slot" /><span class="pkg-slide-tag">BOHO · AESTHETIC</span></div>
+            </div>
+            <div class="pkg-gallery" data-tab="c1-teepee">
+              <div class="pkg-slide is-active"><img class="pkg-slide-img" src="project/uploads/1-1.jpg" alt="Boho Teepee — wide shot" loading="lazy" /><span class="pkg-slide-tag">Wide · Setup</span></div>
+              <div class="pkg-slide"><img class="pkg-slide-img" src="project/uploads/1-2.jpg" alt="Boho Teepee — detail (macramé, candles)" loading="lazy" /><span class="pkg-slide-tag">Detail · Close-up</span></div>
+              <div class="pkg-slide"><img class="pkg-slide-img" src="project/uploads/1-3.jpg" alt="Boho Teepee — at dusk with fairy lights" loading="lazy" /><span class="pkg-slide-tag">Dusk · Fairy lights</span></div>
+            </div>
+            <button class="gallery-nav prev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+            <button class="gallery-nav next" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+            <div class="gallery-dots"></div>
+          </div>
+        </div>
+        <div class="pkg-body">
+          <p class="pkg-title">Classic Magic — from $960</p>
+          <h3 class="pkg-name">Cozy &amp; intimate setups, just the two of you.</h3>
+          <p class="pkg-desc">Focused on privacy and romance. Perfect for couples who want soft, candlelit moments over showpiece scale.</p>
+
+          <div class="pkg-tabs" role="tablist">
+            <button class="pkg-tab is-active" data-tab="c1-sunset" data-price="$960" role="tab">Sunset Tent · $960</button>
+            <button class="pkg-tab" data-tab="c1-teepee" data-price="$980" role="tab">Boho Teepee · $980</button>
+          </div>
+
+          <!-- Hidden content templates -->
+          <template class="pkg-content" data-tab="c1-sunset">
+            <ul class="pkg-features">
+              <li>Beautiful white-fabric tent, decorated table &amp; 2 chairs</li>
+              <li>Lots of LED lamps and candles</li>
+              <li>Fresh fruit and cheese / charcuterie platter</li>
+            </ul>
+            <p class="pkg-stay"><b>Stay on the beach:</b> 2 hours</p>
+          </template>
+          <template class="pkg-content" data-tab="c1-teepee">
+            <ul class="pkg-features">
+              <li>Wooden teepee with macramé and natural linens</li>
+              <li>Warm fairy lights and pillar candles</li>
+              <li>Decorated table, 2 chairs, fresh fruit &amp; cheese platter</li>
+            </ul>
+            <p class="pkg-stay"><b>Stay on the beach:</b> 2 hours</p>
+          </template>
+
+          <div class="pkg-dyn">
+            <ul class="pkg-features">
+              <li>Beautiful white-fabric tent, decorated table &amp; 2 chairs</li>
+              <li>Lots of LED lamps and candles</li>
+              <li>Fresh fruit and cheese / charcuterie platter</li>
+            </ul>
+            <p class="pkg-stay"><b>Stay on the beach:</b> 2 hours</p>
+          </div>
+        </div>
+
+        <div class="pkg-footer">
+          <div class="pkg-price-row">
+            <span class="pkg-price-label">From</span>
+            <span class="pkg-price">$960</span>
+          </div>
+          <a class="btn-primary pkg-cta" href="#">
+            <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.6.1l-.9 1.1c-.2.2-.4.2-.7.1-.3-.2-1.2-.5-2.4-1.5-.9-.8-1.4-1.8-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.5l-.8-2c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 .9-1 2.3s1 2.7 1.1 2.9c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.3-.5-.4zM12 2.2C6.6 2.2 2.2 6.6 2.2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.4 0 9.8-4.4 9.8-9.8S17.4 2.2 12 2.2z"/></svg>
+            Ask about this package
+          </a>
+          <label class="pkg-checkbox">
+            <input type="checkbox" />
+            <span class="cb-box"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.5 3.5L13 5"/></svg></span>
+            <span>Add <b>Red Roses Floral Upgrade</b> to Tent <b style="color:var(--emerald)">+$450</b></span>
+          </label>
+        </div>
+      </article>
+
+      <!-- ============ CARD 2 — PREMIUM ROMANCE (MOST POPULAR) ============ -->
+      <article class="pkg-card pkg-card--popular reveal" style="--i:1;">
+        <span class="pkg-ribbon">Most Popular</span>
+        <div class="pkg-photo-wrap" style="padding-top: 28px;">
+          <div class="pkg-galleries" data-pkg="c2">
+            <div class="pkg-gallery is-active" data-tab="c2-neon">
+              <div class="pkg-slide is-active"><img class="pkg-slide-img" src="project/uploads/2-1.jpg" alt="MARRY ME Neon — wide shot" loading="lazy" /><span class="pkg-slide-tag">WIDE · SETUP</span></div>
+              <div class="pkg-slide"><img class="pkg-slide-img" src="project/uploads/2-2.jpg" alt="MARRY ME Neon — dusk" loading="lazy" /><span class="pkg-slide-tag">STUNNING · NEON</span></div>
+              <div class="pkg-slide"><img class="pkg-slide-img" src="project/uploads/2-3.jpg" alt="MARRY ME Neon — tropical romance with sax" loading="lazy" data-comment-anchor="c2-neon-3-image" /><span class="pkg-slide-tag">TROPICAL · ROMANCE</span></div>
+            </div>
+            <div class="pkg-gallery" data-tab="c2-tropical">
+              <div class="pkg-slide is-active"><img class="pkg-slide-img" src="project/uploads/2-1.jpg" alt="Tropical Vibe — wide shot" loading="lazy" /><span class="pkg-slide-tag">Wide · Setup</span></div>
+              <div class="pkg-slide"><img class="pkg-slide-img" src="project/uploads/2-2.jpg" alt="Tropical Vibe — bamboo table detail" loading="lazy" /><span class="pkg-slide-tag">Detail · Table</span></div>
+              <div class="pkg-slide"><img class="pkg-slide-img" src="project/uploads/2-3.jpg" alt="Tropical Vibe — at dusk with tiki torches" loading="lazy" /><span class="pkg-slide-tag">Dusk · Torches</span></div>
+            </div>
+            <div class="pkg-gallery" data-tab="c2-semi">
+              <div class="pkg-slide is-active"><img class="pkg-slide-img" src="project/uploads/2-1.jpg" alt="Dream Semi-Circle — wide shot" loading="lazy" /><span class="pkg-slide-tag">Wide · Setup</span></div>
+              <div class="pkg-slide"><img class="pkg-slide-img" src="project/uploads/2-2.jpg" alt="Dream Semi-Circle — arch detail" loading="lazy" /><span class="pkg-slide-tag">Detail · Arch</span></div>
+              <div class="pkg-slide"><img class="pkg-slide-img" src="project/uploads/2-3.jpg" alt="Dream Semi-Circle — at dusk, LED glow" loading="lazy" /><span class="pkg-slide-tag">Dusk · LEDs on</span></div>
+            </div>
+            <div class="pkg-gallery" data-tab="c2-modern">
+              <div class="pkg-slide is-active"><img class="pkg-slide-img" src="project/uploads/2-1.jpg" alt="Modern Elegance — wide shot" loading="lazy" /><span class="pkg-slide-tag">Wide · Setup</span></div>
+              <div class="pkg-slide"><img class="pkg-slide-img" src="project/uploads/2-2.jpg" alt="Modern Elegance — white roses detail" loading="lazy" /><span class="pkg-slide-tag">Detail · White roses</span></div>
+              <div class="pkg-slide"><img class="pkg-slide-img" src="project/uploads/2-3.jpg" alt="Modern Elegance — at dusk, candles lit" loading="lazy" /><span class="pkg-slide-tag">Dusk · Candles</span></div>
+            </div>
+            <button class="gallery-nav prev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+            <button class="gallery-nav next" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+            <div class="gallery-dots"></div>
+          </div>
+        </div>
+        <div class="pkg-body">
+          <p class="pkg-title">Premium Romance — from $1,350</p>
+          <h3 class="pkg-name">High-impact, spectacular photos, the ultimate "wow".</h3>
+          <p class="pkg-desc">Designed for couples who want the moment to look as cinematic as it feels. Bold scale, signature setups.</p>
+
+          <div class="pkg-tabs" role="tablist">
+            <button class="pkg-tab is-active" data-tab="c2-neon" data-price="$1,350" role="tab">"Marry Me" Neon · $1,350</button>
+            <button class="pkg-tab" data-tab="c2-tropical" data-price="$1,375" role="tab">Tropical Vibe · $1,375</button>
+            <button class="pkg-tab" data-tab="c2-semi" data-price="$1,400" role="tab">Dream Semi-Circle · $1,400</button>
+            <button class="pkg-tab" data-tab="c2-modern" data-price="$1,490" role="tab">Modern Elegance · $1,490</button>
+          </div>
+
+          <template class="pkg-content" data-tab="c2-neon">
+            <ul class="pkg-features">
+              <li>Large outdoor LED "MARRY ME" letters</li>
+              <li>Heart of real roses on the sand &amp; rose-petal pathway</li>
+              <li>12-rose bouquet for her</li>
+            </ul>
+            <p class="pkg-stay"><b>Stay on the beach:</b> 2 hours</p>
+          </template>
+          <template class="pkg-content" data-tab="c2-tropical">
+            <ul class="pkg-features">
+              <li>Lush palm fronds and fresh tropical florals</li>
+              <li>Decorated bamboo table, tiki torches and candles</li>
+              <li>Coconut &amp; tropical fruit platter, 12-rose bouquet</li>
+            </ul>
+            <p class="pkg-stay"><b>Stay on the beach:</b> 2 hours</p>
+          </template>
+          <template class="pkg-content" data-tab="c2-semi">
+            <ul class="pkg-features">
+              <li>Semi-circular floral arch in pastel roses</li>
+              <li>White draped fabric backdrop, premium LED lighting</li>
+              <li>Rose-petal pathway, 12-rose bouquet</li>
+            </ul>
+            <p class="pkg-stay"><b>Stay on the beach:</b> 2 hours</p>
+          </template>
+          <template class="pkg-content" data-tab="c2-modern">
+            <ul class="pkg-features">
+              <li>Minimalist white arch with monochrome white roses</li>
+              <li>Sleek modern furniture, premium LED candle setup</li>
+              <li>White rose-petal pathway, champagne setup</li>
+            </ul>
+            <p class="pkg-stay"><b>Stay on the beach:</b> 2 hours</p>
+          </template>
+
+          <div class="pkg-dyn">
+            <ul class="pkg-features">
+              <li>Large outdoor LED "MARRY ME" letters</li>
+              <li>Heart of real roses on the sand &amp; rose-petal pathway</li>
+              <li>12-rose bouquet for her</li>
+            </ul>
+            <p class="pkg-stay"><b>Stay on the beach:</b> 2 hours</p>
+          </div>
+        </div>
+
+        <div class="pkg-footer">
+          <div class="pkg-price-row">
+            <span class="pkg-price-label">From</span>
+            <span class="pkg-price">$1,350</span>
+          </div>
+          <a class="btn-primary pkg-cta" href="#">
+            <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.6.1l-.9 1.1c-.2.2-.4.2-.7.1-.3-.2-1.2-.5-2.4-1.5-.9-.8-1.4-1.8-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.5l-.8-2c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 .9-1 2.3s1 2.7 1.1 2.9c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.3-.5-.4zM12 2.2C6.6 2.2 2.2 6.6 2.2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.4 0 9.8-4.4 9.8-9.8S17.4 2.2 12 2.2z"/></svg>
+            Book this package
+          </a>
+        </div>
+      </article>
+
+      <!-- ============ CARD 3 — VIP & LUXURY ============ -->
+      <article class="pkg-card reveal" style="--i:2;">
+        <div class="pkg-photo-wrap">
+          <div class="pkg-galleries" data-pkg="c3">
+            <div class="pkg-gallery is-active" data-tab="c3-heart">
+              <div class="pkg-slide is-active"><img class="pkg-slide-img" src="project/uploads/3-1.jpg" alt="Massive decor — MARRY ME on the beach with red & white roses" loading="lazy" /><span class="pkg-slide-tag">MASSIVE · DECOR</span></div>
+              <div class="pkg-slide"><img class="pkg-slide-img" src="project/uploads/3-2.jpg" alt="Premium illumination — couple at lit floral heart arch" loading="lazy" /><span class="pkg-slide-tag">PREMIUM · ILLUMINATION</span></div>
+              <div class="pkg-slide"><img class="pkg-slide-img" src="project/uploads/3-3.jpg" alt="Premium floral art — Will You Marry Me neon round arch" loading="lazy" data-comment-anchor="c3-heart-3-image" /><span class="pkg-slide-tag">PREMIUM · FLORAL · ART</span></div>
+            </div>
+            <div class="pkg-gallery" data-tab="c3-hydrangea">
+              <div class="pkg-slide is-active"><img class="pkg-slide-img" src="project/uploads/3-1.jpg" alt="Hydrangea Luxury — wide shot" loading="lazy" /><span class="pkg-slide-tag">Wide · Setup</span></div>
+              <div class="pkg-slide"><img class="pkg-slide-img" src="project/uploads/3-2.jpg" alt="Hydrangea Luxury — cascade detail" loading="lazy" /><span class="pkg-slide-tag">Detail · Cascade</span></div>
+              <div class="pkg-slide"><img class="pkg-slide-img" src="project/uploads/3-3.jpg" alt="Hydrangea Luxury — at dusk, full lighting" loading="lazy" /><span class="pkg-slide-tag">Dusk · Full lighting</span></div>
+            </div>
+            <button class="gallery-nav prev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+            <button class="gallery-nav next" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+            <div class="gallery-dots"></div>
+          </div>
+        </div>
+        <div class="pkg-body">
+          <p class="pkg-title">VIP &amp; Luxury — from $1,599</p>
+          <h3 class="pkg-name">Massive, uncompromising decor.</h3>
+          <p class="pkg-desc">The beach is literally covered in lights, candles, and premium flowers. For couples who want to go all-in.</p>
+
+          <div class="pkg-tabs" role="tablist">
+            <button class="pkg-tab is-active" data-tab="c3-heart" data-price="$1,599" role="tab">The Rose Heart · $1,599</button>
+            <button class="pkg-tab" data-tab="c3-hydrangea" data-price="$1,960" role="tab">Hydrangea Luxury · $1,960</button>
+          </div>
+
+          <template class="pkg-content" data-tab="c3-heart">
+            <ul class="pkg-features">
+              <li>Heart-shaped arch of red, white &amp; pink roses with LED lighting</li>
+              <li>Premium path of roses with 6 LED stands</li>
+              <li>24-rose bouquet for her</li>
+            </ul>
+            <p class="pkg-stay"><b>Stay on the beach:</b> 2 hours</p>
+          </template>
+          <template class="pkg-content" data-tab="c3-hydrangea">
+            <ul class="pkg-features">
+              <li>Premium hydrangea cloud arrangement, white &amp; blue cascade</li>
+              <li>Plush velvet seating, abundant LED candle ambiance</li>
+              <li>Rose &amp; hydrangea petal pathway, 24-rose bouquet</li>
+            </ul>
+            <p class="pkg-stay"><b>Stay on the beach:</b> 2 hours</p>
+          </template>
+
+          <div class="pkg-dyn">
+            <ul class="pkg-features">
+              <li>Heart-shaped arch of red, white &amp; pink roses with LED lighting</li>
+              <li>Premium path of roses with 6 LED stands</li>
+              <li>24-rose bouquet for her</li>
+            </ul>
+            <p class="pkg-stay"><b>Stay on the beach:</b> 2 hours</p>
+          </div>
+        </div>
+
+        <div class="pkg-footer">
+          <div class="pkg-price-row">
+            <span class="pkg-price-label">From</span>
+            <span class="pkg-price">$1,599</span>
+          </div>
+          <a class="btn-primary pkg-cta" href="#">
+            <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.6.1l-.9 1.1c-.2.2-.4.2-.7.1-.3-.2-1.2-.5-2.4-1.5-.9-.8-1.4-1.8-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.5l-.8-2c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 .9-1 2.3s1 2.7 1.1 2.9c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.3-.5-.4zM12 2.2C6.6 2.2 2.2 6.6 2.2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.4 0 9.8-4.4 9.8-9.8S17.4 2.2 12 2.2z"/></svg>
+            Book VIP experience
+          </a>
+        </div>
+      </article>
+    </div>
+
+    <!-- Exclusive Masterpiece -->
+    <div class="exclusive reveal">
+      <div class="exclusive-top">
+        <div class="exclusive-headline">
+          <p class="exclusive-eyebrow">Exclusive · By request</p>
+          <h3 class="exclusive-title">Rose Masterpiece</h3>
+          <p class="exclusive-scale"><b>Layout Scale:</b> Maximum scale layout available for your location.</p>
+        </div>
+        <div class="exclusive-right">
+          <p class="exclusive-price-label">From</p>
+          <p class="exclusive-price">$2,175</p>
+          <a class="btn-primary" href="#">
+            <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.6.1l-.9 1.1c-.2.2-.4.2-.7.1-.3-.2-1.2-.5-2.4-1.5-.9-.8-1.4-1.8-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.5l-.8-2c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 .9-1 2.3s1 2.7 1.1 2.9c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.3-.5-.4zM12 2.2C6.6 2.2 2.2 6.6 2.2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.4 0 9.8-4.4 9.8-9.8S17.4 2.2 12 2.2z"/></svg>
+            Request exclusive booking
+          </a>
+        </div>
+      </div>
+
+      <div class="exclusive-divider"></div>
+
+      <div class="exclusive-grid">
+        <div class="exclusive-group">
+          <h4>Core Infrastructure &amp; Decor</h4>
+          <ul class="exclusive-list">
+            <li data-comment-anchor="c9bbaa2f4f-li"><span class="qty">1</span> Large <b>heart-shaped arch</b> decorated with high-quality floral arrangements and integrated LED lighting</li>
+            <li><span class="qty">2</span> Detached <b>large floral arrangements</b> on either side of the arch</li>
+            <li><b>Walkway</b> made of premium floral arrangements layered with white &amp; pink natural rose petals on the sand</li>
+            <li><span class="qty">6</span> <b>LED stands</b> for flowers with 6 flower arrangements on stands</li>
+            <li><span class="qty">2</span> Acrylic candlesticks with candles and a <b>large number of cylindrical LED candles</b></li>
+          </ul>
+        </div>
+
+        <div class="exclusive-group">
+          <h4>Premium Inclusions</h4>
+          <ul class="exclusive-list">
+            <li><span class="qty">1</span> Fresh natural bouquet of <b>24 pink roses</b> for your partner</li>
+            <li><span class="qty">1</span> Decorated table with <b>2 chairs</b></li>
+            <li>Chilled <b>champagne</b> with glasses and 1 standard fruit &amp; cheese / sausage platter</li>
+            <li>Private speaker <b>musical accompaniment</b></li>
+          </ul>
+        </div>
+
+        <div class="exclusive-group">
+          <h4>Media &amp; Timing</h4>
+          <ul class="exclusive-list">
+            <li><b>Professional photographer</b> included — covers the proposal and a love-story shoot</li>
+            <li><span class="qty">2</span> hours total beach stay</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- BLOCK 5 — ADD-ONS                                            -->
+<!-- ============================================================ -->
+<section class="addons" data-screen-label="05 Add-ons">
+  <div class="container">
+    <div class="addons-head reveal">
+      <h2 class="section-title">Upgrade <em>your experience.</em></h2>
+      <div class="addon-total">
+        <span class="addon-total-label">Selected add-ons</span>
+        <span class="addon-total-val"><span class="plus">+</span><span id="addonTotal">$0</span></span>
+      </div>
+    </div>
+
+    <div class="addons-grid reveal">
+      <!-- Column 1 -->
+      <div class="addon-row">
+        <div class="addon-name">Fresh bouquet of 24 roses</div>
+        <div class="addon-dots"></div>
+        <div class="addon-price">$80</div>
+        <button class="addon-btn" data-added="false" data-price="80">
+          <span class="ico ico-plus"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span>
+          <span class="ico ico-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.5l2.5 2.5L10 3.5"/></svg></span>
+          <span class="label-add">Add</span><span class="label-added">Added</span>
+        </button>
+      </div>
+
+      <div class="addon-row">
+        <div class="addon-name">Fresh bouquet of 48 roses</div>
+        <div class="addon-dots"></div>
+        <div class="addon-price">$150</div>
+        <button class="addon-btn" data-added="false" data-price="150">
+          <span class="ico ico-plus"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span>
+          <span class="ico ico-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.5l2.5 2.5L10 3.5"/></svg></span>
+          <span class="label-add">Add</span><span class="label-added">Added</span>
+        </button>
+      </div>
+
+      <div class="addon-row">
+        <div class="addon-name">Classic Red Carpet pathway</div>
+        <div class="addon-dots"></div>
+        <div class="addon-price">$80</div>
+        <button class="addon-btn" data-added="false" data-price="80">
+          <span class="ico ico-plus"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span>
+          <span class="ico ico-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.5l2.5 2.5L10 3.5"/></svg></span>
+          <span class="label-add">Add</span><span class="label-added">Added</span>
+        </button>
+      </div>
+
+      <div class="addon-row">
+        <div class="addon-name">Elegant White Carpet pathway</div>
+        <div class="addon-dots"></div>
+        <div class="addon-price">$100</div>
+        <button class="addon-btn" data-added="false" data-price="100">
+          <span class="ico ico-plus"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span>
+          <span class="ico ico-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.5l2.5 2.5L10 3.5"/></svg></span>
+          <span class="label-add">Add</span><span class="label-added">Added</span>
+        </button>
+      </div>
+
+      <div class="addon-row">
+        <div class="addon-name">LED "Will you marry me?" sign<small>Standard or Spanish</small></div>
+        <div class="addon-dots"></div>
+        <div class="addon-price">$120</div>
+        <button class="addon-btn" data-added="false" data-price="120">
+          <span class="ico ico-plus"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span>
+          <span class="ico ico-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.5l2.5 2.5L10 3.5"/></svg></span>
+          <span class="label-add">Add</span><span class="label-added">Added</span>
+        </button>
+      </div>
+
+      <div class="addon-row">
+        <div class="addon-name">Large LED floor letters "MARRY ME"</div>
+        <div class="addon-dots"></div>
+        <div class="addon-price">$300</div>
+        <button class="addon-btn" data-added="false" data-price="300">
+          <span class="ico ico-plus"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span>
+          <span class="ico ico-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.5l2.5 2.5L10 3.5"/></svg></span>
+          <span class="label-add">Add</span><span class="label-added">Added</span>
+        </button>
+      </div>
+
+      <div class="addon-row">
+        <div class="addon-name">Cold Sparkler Fountains<small>2 pcs $200 · 4 pcs $350</small></div>
+        <div class="addon-dots"></div>
+        <div class="addon-price">$200+</div>
+        <button class="addon-btn" data-added="false" data-price="200">
+          <span class="ico ico-plus"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span>
+          <span class="ico ico-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.5l2.5 2.5L10 3.5"/></svg></span>
+          <span class="label-add">Add</span><span class="label-added">Added</span>
+        </button>
+      </div>
+
+      <div class="addon-row">
+        <div class="addon-name">Live music — saxophone or violin<small>1 hour set</small></div>
+        <div class="addon-dots"></div>
+        <div class="addon-price">$300</div>
+        <button class="addon-btn" data-added="false" data-price="300">
+          <span class="ico ico-plus"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span>
+          <span class="ico ico-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.5l2.5 2.5L10 3.5"/></svg></span>
+          <span class="label-add">Add</span><span class="label-added">Added</span>
+        </button>
+      </div>
+
+      <div class="addon-row">
+        <div class="addon-name">Dominican Mariachi Band<small>5 people · 30 minutes</small></div>
+        <div class="addon-dots"></div>
+        <div class="addon-price">$450</div>
+        <button class="addon-btn" data-added="false" data-price="450">
+          <span class="ico ico-plus"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span>
+          <span class="ico ico-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.5l2.5 2.5L10 3.5"/></svg></span>
+          <span class="label-add">Add</span><span class="label-added">Added</span>
+        </button>
+      </div>
+
+      <div class="addon-row">
+        <div class="addon-name">Cinematic Video Clip<small>1 song length, edited</small></div>
+        <div class="addon-dots"></div>
+        <div class="addon-price">$450</div>
+        <button class="addon-btn" data-added="false" data-price="450">
+          <span class="ico ico-plus"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span>
+          <span class="ico ico-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.5l2.5 2.5L10 3.5"/></svg></span>
+          <span class="label-add">Add</span><span class="label-added">Added</span>
+        </button>
+      </div>
+
+      <div class="addon-row">
+        <div class="addon-name">VIP Retro Car Transfer<small>1958 Cadillac · 1932 Bentley · +$50 for Cap Cana / Uvero Alto</small></div>
+        <div class="addon-dots"></div>
+        <div class="addon-price">$300</div>
+        <button class="addon-btn" data-added="false" data-price="300">
+          <span class="ico ico-plus"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span>
+          <span class="ico ico-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.5l2.5 2.5L10 3.5"/></svg></span>
+          <span class="label-add">Add</span><span class="label-added">Added</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- BLOCK 6 — RETRO CARS                                         -->
+<!-- ============================================================ -->
+<section class="cars" data-screen-label="06 Retro Cars">
+  <div class="container">
+    <div class="cars-head reveal">
+      <div class="cars-head-text">
+        <h2 class="section-title">Arrive in <em>Hollywood style.</em></h2>
+        <p class="section-sub">Turn your transfer into an unforgettable experience. Add a private chauffeur-driven vintage car to any package for just <b style="color:var(--ink);font-weight:600">$300</b> — perfect for incredible photos before you even step onto the beach.</p>
+      </div>
+      <div class="cars-nav">
+        <button class="cars-nav-btn" id="cars-prev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <button class="cars-nav-btn" id="cars-next" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+
+    <div class="cars-track reveal" id="cars-track">
+
+      <article class="car-card">
+        <div class="car-photo">
+          <span class="car-badge">British</span>
+          <div class="car-img">
+            <img class="car-img-img" src="project/uploads/car-bentley.jpg" alt="1932 Bentley Phaeton — open-top, palm backdrop" loading="lazy" />
+          </div>
+        </div>
+        <div class="car-body">
+          <p class="car-year">1932 · Open-top</p>
+          <h3 class="car-name">Bentley Phaeton</h3>
+          <p class="car-sub">Ultimate British classic elegance. Open-top luxury, the kind of car that walks down a runway.</p>
+          <div class="car-footer">
+            <span class="car-price">$300</span>
+            <button class="car-add" data-added="false" data-price="300">
+              <span class="ico ico-plus"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span>
+              <span class="ico ico-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.5l2.5 2.5L10 3.5"/></svg></span>
+              <span class="label-add">Add to package</span>
+              <span class="label-added">Added · $300</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="car-card">
+        <div class="car-photo">
+          <span class="car-badge">American</span>
+          <div class="car-img">
+            <img class="car-img-img" src="project/uploads/car-cadillac.jpg" alt="1958 Cadillac Eldorado — pastel, ocean backdrop" loading="lazy" />
+          </div>
+        </div>
+        <div class="car-body">
+          <p class="car-year">1958 · Iconic tailfins</p>
+          <h3 class="car-name">Cadillac Eldorado</h3>
+          <p class="car-sub">Iconic American tailfins. Pure retro romance — pastel paint, chrome, and the smell of the Atlantic.</p>
+          <div class="car-footer">
+            <span class="car-price">$300</span>
+            <button class="car-add" data-added="false" data-price="300">
+              <span class="ico ico-plus"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span>
+              <span class="ico ico-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.5l2.5 2.5L10 3.5"/></svg></span>
+              <span class="label-add">Add to package</span>
+              <span class="label-added">Added · $300</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="car-card">
+        <div class="car-photo">
+          <span class="car-badge">Streamline</span>
+          <div class="car-img">
+            <img class="car-img-img" src="project/uploads/car-lincoln.jpg" alt="1939 Lincoln Zephyr — cinematic, dark cobblestone" loading="lazy" />
+          </div>
+        </div>
+        <div class="car-body">
+          <p class="car-year">1939 · Rare &amp; cinematic</p>
+          <h3 class="car-name">Lincoln Zephyr</h3>
+          <p class="car-sub">Streamline modern masterpiece. Rare, sculptural, and deeply cinematic on film.</p>
+          <div class="car-footer">
+            <span class="car-price">$300</span>
+            <button class="car-add" data-added="false" data-price="300">
+              <span class="ico ico-plus"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span>
+              <span class="ico ico-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.5l2.5 2.5L10 3.5"/></svg></span>
+              <span class="label-add">Add to package</span>
+              <span class="label-added">Added · $300</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="car-card">
+        <div class="car-photo">
+          <span class="car-badge">Post-war</span>
+          <div class="car-img">
+            <img class="car-img-img" src="project/uploads/car-dodge.jpg" alt="1949 Dodge Coronet — pink, resort backdrop" loading="lazy" />
+          </div>
+        </div>
+        <div class="car-body">
+          <p class="car-year">1949 · Post-war charm</p>
+          <h3 class="car-name">Dodge Coronet</h3>
+          <p class="car-sub">Post-war vintage charm. Smooth, authentic American styling — the everyman's classic.</p>
+          <div class="car-footer">
+            <span class="car-price">$300</span>
+            <button class="car-add" data-added="false" data-price="300">
+              <span class="ico ico-plus"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span>
+              <span class="ico ico-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.5l2.5 2.5L10 3.5"/></svg></span>
+              <span class="label-add">Add to package</span>
+              <span class="label-added">Added · $300</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="cars-dots" id="cars-dots"></div>
+
+    <p class="cars-note">A small <b>$50 distance surcharge</b> applies only for resorts located in the <b>Cap Cana</b> and <b>Uvero Alto</b> areas. All cars are subject to availability on your chosen date.</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- BLOCK 7 — REVIEWS                                            -->
+<!-- ============================================================ -->
+<section class="reviews" data-screen-label="07 Reviews">
+  <div class="container">
+    <div class="section-head--center reveal">
+      <h2 class="section-title">What they said <em>after she said yes.</em></h2>
+      <p class="section-sub">29 verified Google reviews. A few favourites below — the rest live on our Google Business profile.</p>
+    </div>
+
+    <div class="reviews-masonry">
+
+      <article class="review-card reveal" style="--i:0;">
+        <span class="review-flag" title="USA">🇺🇸</span>
+        <div class="review-photo">
+          <img class="review-photo-img" src="project/uploads/isabella.jpg" alt="Isabella — beach proposal at the rose heart" loading="lazy" />
+        </div>
+        <div class="review-body">
+          <div class="review-stars">★ ★ ★ ★ ★</div>
+          <p class="review-quote">I got proposed to yesterday, and I am still in awe of how perfect everything was. This team did such an AMAZING job thinking of every single detail. The decorations were beyond beautiful, everything was set up flawlessly, and the entire moment felt so magical and intentional. On top of their incredible work, they were so sweet, kind, and genuine, which made the experience even more special and stress-free. This was one of the most important moments of my life, and they truly exceeded all expectations. I highly recommend them to anyone looking to create a once-in-a-lifetime moment! 🤍✨</p>
+        </div>
+        <div class="review-author">
+          <span class="review-avatar">IL</span>
+          <div class="review-meta"><span class="name">Isabella Lelis</span><span class="when">United States · Feb 2026</span></div>
+        </div>
+      </article>
+
+      <article class="review-card reveal" style="--i:1;">
+        <span class="review-flag" title="Mexico">🇲🇽</span>
+        <div class="review-photo">
+          <img class="review-photo-img" src="project/uploads/Cristian.jpg" alt="Cristian — beach proposal at round floral arch" loading="lazy" />
+        </div>
+        <div class="review-body">
+          <div class="review-stars">★ ★ ★ ★ ★</div>
+          <p class="review-quote">Excellent service! We loved absolutely everything. It was truly magical — from the initial contact via WhatsApp, the constant communication, the super secure payment through PayPal, the hotel pickup, the beach setup, and the final photos and video. Everything, absolutely everything was flawless. Thank you for making us remember this moment for a lifetime! We traveled from Mexico exclusively for this ❤️</p>
+        </div>
+        <div class="review-author">
+          <span class="review-avatar">CM</span>
+          <div class="review-meta"><span class="name">Cristian Miranda</span><span class="when">Mexico · Aug 2025</span></div>
+        </div>
+      </article>
+
+      <article class="review-card reveal" style="--i:2;">
+        <span class="review-flag" title="USA">🇺🇸</span>
+        <div class="review-photo">
+          <img class="review-photo-img" src="project/uploads/Beau Roberts.jpg" alt="Beau — candlelit beach dinner toast" loading="lazy" />
+        </div>
+        <div class="review-body">
+          <div class="review-stars">★ ★ ★ ★ ★</div>
+          <p class="review-quote">I cannot recommend them enough. If you are searching for a unique, private, and intimate proposal, you can't go wrong. Sofia was wonderful to work with, planning every detail of how I wanted to pop the question, and was very responsive. We built a custom package, and from there, they blew us away with their photo and video quality. Such a great team that made our dream proposal possible!</p>
+        </div>
+        <div class="review-author">
+          <span class="review-avatar">BR</span>
+          <div class="review-meta"><span class="name">Beau Roberts</span><span class="when">United States · Aug 2025</span></div>
+        </div>
+      </article>
+
+      <article class="review-card review-card--text reveal" style="--i:3;">
+        <span class="review-flag" title="USA">🇺🇸</span>
+        <div class="review-body">
+          <div class="review-stars">★ ★ ★ ★ ★</div>
+          <p class="review-quote">This company went above and beyond for me during the whole planning process with Sofia, to the hotel transfer, to the amazing photographer with everything set up exceeding all my expectations. My new fiancée couldn't be happier and I'm so grateful that they did so well making her dream a reality! Absolutely perfect, wouldn't change a thing!!</p>
+        </div>
+        <div class="review-author">
+          <span class="review-avatar" style="background:#1A73E8;color:#fff;">S</span>
+          <div class="review-meta"><span class="name">Stephen Wilkins</span><span class="when">United States · May 2025</span></div>
+        </div>
+      </article>
+
+      <article class="review-card review-card--text reveal" style="--i:4;">
+        <span class="review-flag" title="USA">🇺🇸</span>
+        <div class="review-body">
+          <div class="review-stars">★ ★ ★ ★ ★</div>
+          <p class="review-quote">This experience was executed at the highest level from start to finish. The communication from the team was crystal clear and incredibly fast. The final setup on the beach was exactly as promised and the timing was handled perfectly for the sunset lighting. If you want it done right, this is a service you can trust.</p>
+        </div>
+        <div class="review-author">
+          <span class="review-avatar" style="background:#E8710A;color:#fff;">C</span>
+          <div class="review-meta"><span class="name">Chris Ortiz</span><span class="when">United States · Mar 2026</span></div>
+        </div>
+      </article>
+
+      <article class="review-card review-card--text reveal" style="--i:5;">
+        <span class="review-flag" title="UK">🇬🇧</span>
+        <div class="review-body">
+          <div class="review-stars">★ ★ ★ ★ ★</div>
+          <p class="review-quote">Absolutely phenomenal experience in every aspect. From the communication from the company, the arrangements, and specific requests right down to the special day — amazing job by everyone involved. I would highly recommend this company for a very special experience. Myself and my new fiancée simply cannot wait for the professional photos and videos to be delivered so we can re-live the experience all over again. Thank you to everyone!</p>
+        </div>
+        <div class="review-author">
+          <span class="review-avatar" style="background:#9334E6;color:#fff;">B</span>
+          <div class="review-meta"><span class="name">Braidi &amp; Coral</span><span class="when">United Kingdom · Feb 2026</span></div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="reviews-cta-wrap reveal">
+      <a class="btn-google-reviews" href="https://www.google.com/maps/place/M%26Y+CARIBBEAN+PROPOSAL+%26+EVENT+STUDIO,+S.R.L./@18.6411284,-68.4724343,47314m/data=!3m1!1e3!4m6!3m5!1s0x8ea8eb8575fb9b01:0x88f4c0a8e5936562!8m2!3d18.6411284!4d-68.4724343!16s%2Fg%2F11ld3sb4f4?hl=ru&entry=ttu" target="_blank" rel="noopener noreferrer">
+        <svg class="g-icon" viewBox="0 0 48 48" aria-hidden="true">
+          <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
+          <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
+          <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/>
+          <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
+        </svg>
+        <span>View All Reviews on Google Maps</span>
+      </a>
+    </div>
+  </div>
+</section>
+<!-- ============================================================ -->
+<section class="sofia" data-screen-label="08 Sofia" style="display:none">
+  <div class="container">
+    <div class="sofia-grid">
+      <div class="sofia-collage reveal">
+        <div class="sc-main">
+          <image-slot id="sofia-main" shape="rect" radius="12" placeholder="Sofia at work — main reportage shot" style="position:absolute;inset:0;width:100%;height:100%;"></image-slot>
+          <span class="sc-cap">On set · setup hour</span>
+        </div>
+        <div class="sc-small">
+          <image-slot id="sofia-small-1" shape="rect" radius="12" placeholder="Sofia briefing the team / lighting candles" style="position:absolute;inset:0;width:100%;height:100%;"></image-slot>
+          <span class="sc-cap">Team brief</span>
+        </div>
+        <div class="sc-small">
+          <image-slot id="sofia-small-2" shape="rect" radius="12" placeholder="Sofia handing bouquet to groom" style="position:absolute;inset:0;width:100%;height:100%;"></image-slot>
+          <span class="sc-cap">Final touch</span>
+        </div>
+      </div>
+      <div class="sofia-text reveal" style="--i:1;">
+        <p class="sofia-eyebrow">Meet the team</p>
+        <p class="sofia-quote">I've been organizing marriage proposals in Punta Cana since 2020. I know exactly what can go wrong — from sudden tropical showers to late resort transfers — and I've built a team to make sure it never does. You're about to ask the most important question of your life. We take that responsibility seriously.</p>
+        <div class="sofia-byline">
+          <span><b>Sofia &amp; the team</b></span>
+          <span class="sep">·</span>
+          <span style="display:inline-flex;align-items:center;gap:6px;">
+            <svg class="pin" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8 2 5 5 5 9c0 5.3 7 13 7 13s7-7.7 7-13c0-4-3-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+            Playa Bavaro, Punta Cana
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- BLOCK 8 — FAQ                                                -->
+<!-- ============================================================ -->
+<section class="faq" data-screen-label="09 FAQ">
+  <div class="container">
+    <div class="faq-wrap">
+      <div class="section-head--center reveal" style="margin-bottom: 40px;">
+        <h2 class="section-title">Everything you need to know <em>before you book.</em></h2>
+      </div>
+
+      <div class="faq-list reveal">
+
+        <div class="faq-item" data-open="false">
+          <button class="faq-question" aria-expanded="false">
+            <span>How far in advance should we book?</span>
+            <span class="faq-toggle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Most couples book <b>2–6 weeks ahead</b>, but we've pulled off beautiful proposals with as little as 48 hours' notice. High season (Dec–Apr) fills faster — message us early to lock your sunset slot on Bounty Beach.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" data-open="false">
+          <button class="faq-question" aria-expanded="false">
+            <span>What happens if it rains?</span>
+            <span class="faq-toggle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Caribbean weather is fast-moving — rain rarely lasts more than an hour. We track the radar all day and stay in close touch. If a setup truly can't happen, you can <b>reschedule free of charge</b> to any other date that week (or get a full refund if you're leaving the island).</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" data-open="false">
+          <button class="faq-question" aria-expanded="false">
+            <span>Where exactly do the proposals happen?</span>
+            <span class="faq-toggle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Our home base is <b>Bounty Beach</b> in Playa Bavaro — a semi-private stretch with a perfect west-facing sunset. We pick up from any resort in Bavaro, Cap Cana, Uvero Alto and Punta Cana Village.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" data-open="false">
+          <button class="faq-question" aria-expanded="false">
+            <span>How does the photographer stay hidden?</span>
+            <span class="faq-toggle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Our photographers use long lenses from ~30m away — far enough she won't notice them, close enough to catch the exact micro-expression when she realises what's happening. After you say "yes" we move in for couple portraits.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" data-open="false">
+          <button class="faq-question" aria-expanded="false">
+            <span>How do I pay from the USA, Canada, or abroad?</span>
+            <span class="faq-toggle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>A <b>30% deposit</b> locks your date. The remainder is due 48 hours before your proposal. We accept <b>Zelle, Venmo</b>, bank transfers, and USD cash on the day. All official payment details and invoices are confirmed directly via WhatsApp or sent to your email at <a href="mailto:sofiayupiha@gmail.com">sofiayupiha@gmail.com</a>.</p>
+              <div class="pay-logos">
+                <span class="lbl">Accepted</span>
+                <!-- Zelle -->
+                <svg class="pay-logo" viewBox="0 0 60 24" xmlns="http://www.w3.org/2000/svg" aria-label="Zelle">
+                  <rect width="60" height="24" rx="3" fill="#6D1ED4"/>
+                  <text x="30" y="16.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#fff" letter-spacing="0.5">Zelle</text>
+                </svg>
+                <!-- Venmo -->
+                <svg class="pay-logo" viewBox="0 0 60 24" xmlns="http://www.w3.org/2000/svg" aria-label="Venmo">
+                  <rect width="60" height="24" rx="3" fill="#008CFF"/>
+                  <text x="30" y="16.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#fff" letter-spacing="0.3">venmo</text>
+                </svg>
+                <!-- PayPal logo removed -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" data-open="false">
+          <button class="faq-question" aria-expanded="false">
+            <span>Can friends or family attend?</span>
+            <span class="faq-toggle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Absolutely. Many couples bring a small group to celebrate right after the "yes". We can arrange extra champagne, additional transfers, and a post-proposal dinner setup — just message us.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- BLOCK 9 — FINAL CTA                                          -->
+<!-- ============================================================ -->
+<section class="final-cta" data-screen-label="10 Final CTA">
+  <div class="container">
+    <h2 class="reveal">She doesn't know <em>what's about to happen.</em></h2>
+    <p class="section-sub reveal" style="--i:1;">Let's make sure it's absolutely perfect. Connect with Sofia now to check your dates and lock your package.</p>
+
+    <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+      <a href="#" class="btn-primary btn-primary--xl btn-primary--pulse reveal" style="--i:2;" aria-label="Connect via WhatsApp">
+        <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:20px;height:20px;">
+          <path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.6.1l-.9 1.1c-.2.2-.4.2-.7.1-.3-.2-1.2-.5-2.4-1.5-.9-.8-1.4-1.8-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.5l-.8-2c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 .9-1 2.3s1 2.7 1.1 2.9c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.3-.5-.4zM12 2.2C6.6 2.2 2.2 6.6 2.2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.4 0 9.8-4.4 9.8-9.8S17.4 2.2 12 2.2z"/>
+        </svg>
+        Connect via WhatsApp
+      </a>
+
+      <a class="imsg-link" href="sms:+18296627835">
+        <svg class="imsg-icon" viewBox="0 0 64 64" aria-hidden="true">
+          <defs>
+            <linearGradient id="imsgGrad2" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#5BF675"/>
+              <stop offset="1" stop-color="#0CBD2A"/>
+            </linearGradient>
+          </defs>
+          <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#imsgGrad2)"/>
+          <path fill="#fff" d="M32 14c-10.5 0-19 7.2-19 16 0 5 2.7 9.5 7 12.3-.4 2-1.4 4.5-3.1 6.3-.4.4-.1 1.1.5 1 4.4-.5 8-2.7 9.6-3.8 1.6.3 3.3.5 5 .5 10.5 0 19-7.2 19-16S42.5 14 32 14z"/>
+        </svg>
+        <span class="imsg-label">Or text via <strong>iMessage / SMS</strong>: <strong>+1 (829) 662-7835</strong></span>
+      </a>
+    </div>
+
+    <p class="final-foot reveal" style="--i:3;">Available Mon–Sat, 9am–8pm EST. We value your privacy — no spam, just your proposal planning.</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- FOOTER                                                       -->
+<!-- ============================================================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <span>© 2020–2026 Marriage Proposals DR · Playa Bavaro, Punta Cana, Dominican Republic</span>
+      <span class="footer-links">
+        <span class="footer-contact">Contact: <a href="mailto:sofiayupiha@gmail.com">sofiayupiha@gmail.com</a></span>
+        <span class="footer-sep">·</span>
+        <a href="#">Privacy Policy</a>
+        <span class="footer-sep">·</span>
+        <a href="#">Terms of Service</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================ -->
+<!-- LIGHTBOX                                                     -->
+<!-- ============================================================ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="lightbox-stage" id="lightbox-stage">
+    <div class="lightbox-video" id="lb-video"></div>
+    <div class="lightbox-overlay">
+      <span class="lb-tag" id="lb-tag">Film · 3:42</span>
+      <div class="lb-cap">
+        <b id="lb-title">Watch our proposal films</b>
+        <small id="lb-sub">Real couples · cinematic edits</small>
+      </div>
+    </div>
+    <button class="lightbox-close" id="lb-close" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+</div>
+
+<script>
+/**
+ * <image-slot> — user-fillable image placeholder.
+ *
+ * Drop this into a deck, mockup, or page wherever you want the user to
+ * supply an image. You control the slot's shape and size; the user fills it
+ * by dragging an image file onto it (or clicking to browse). The dropped
+ * image persists across reloads via a .image-slots.state.json sidecar —
+ * same read-via-fetch / write-via-window.omelette pattern as
+ * design_canvas.jsx, so the filled slot shows on share links, downloaded
+ * zips, and PPTX export. Outside the omelette runtime the slot is read-only.
+ *
+ * The host bridge only allows sidecar writes at the project root, so the
+ * HTML that uses this component is assumed to live at the project root too
+ * (same constraint as design_canvas.jsx).
+ *
+ * Attributes:
+ *   id           Persistence key. REQUIRED for the drop to survive reload —
+ *                every slot on the page needs a distinct id.
+ *   shape        'rect' | 'rounded' | 'circle' | 'pill'   (default 'rounded')
+ *                'circle' applies 50% border-radius; on a non-square slot
+ *                that's an ellipse — set equal width and height for a true
+ *                circle.
+ *   radius       Corner radius in px for 'rounded'.       (default 12)
+ *   mask         Any CSS clip-path value. Overrides `shape` — use this for
+ *                hexagons, blobs, arbitrary polygons.
+ *   fit          object-fit: cover | contain | fill.       (default 'cover')
+ *                With cover (the default) double-clicking the filled slot
+ *                enters a reframe mode: the whole image spills past the mask
+ *                (translucent outside, opaque inside), drag to reposition,
+ *                corner-drag to scale. The crop persists alongside the image
+ *                in the sidecar. contain/fill stay static.
+ *   position     object-position for fit=contain|fill.     (default '50% 50%')
+ *   placeholder  Empty-state caption.                      (default 'Drop an image')
+ *   src          Optional initial/fallback image URL. A user drop overrides
+ *                it; clearing the drop reveals src again.
+ *
+ * Size and layout come from ordinary CSS on the element — width/height
+ * inline or from a parent grid — so it composes with any layout.
+ *
+ * Usage:
+ *   <script src="image-slot.js"><\/script>
+ *   <image-slot id="hero"   style="width:800px;height:450px" shape="rounded" radius="20"
+ *               placeholder="Drop a hero image"></image-slot>
+ *   <image-slot id="avatar" style="width:120px;height:120px" shape="circle"></image-slot>
+ *   <image-slot id="kite"   style="width:300px;height:300px"
+ *               mask="polygon(50% 0, 100% 50%, 50% 100%, 0 50%)"></image-slot>
+ */
+
+(() => {
+  const STATE_FILE = '.image-slots.state.json';
+  // 2× a ~600px slot in a 1920-wide deck — retina-sharp without making the
+  // sidecar enormous. A 1200px WebP at q=0.85 is ~150-300KB.
+  const MAX_DIM = 1200;
+  // Raster formats only. SVG is excluded (can carry script; createImageBitmap
+  // on SVG blobs is inconsistent). GIF is excluded because the canvas
+  // re-encode keeps only the first frame, so an animated GIF would silently
+  // go still — better to reject than surprise.
+  const ACCEPT = ['image/png', 'image/jpeg', 'image/webp', 'image/avif'];
+
+  // ── Shared sidecar store ────────────────────────────────────────────────
+  // One fetch + immediate write-on-change for every <image-slot> on the
+  // page. Reads via fetch() so viewing works anywhere the HTML and sidecar
+  // are served together; writes go through window.omelette.writeFile, which
+  // the host allowlists to *.state.json basenames only.
+  const subs = new Set();
+  let slots = {};
+  // ids explicitly cleared before the sidecar fetch resolved — otherwise
+  // the merge below can't tell "never set" from "just deleted" and would
+  // resurrect the sidecar's stale value.
+  const tombstones = new Set();
+  let loaded = false;
+  let loadP = null;
+
+  function load() {
+    if (loadP) return loadP;
+    loadP = fetch(STATE_FILE)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((j) => {
+        // Merge: sidecar loses to any in-memory change that raced ahead of
+        // the fetch (drop or clear) so neither is clobbered by hydration.
+        if (j && typeof j === 'object') {
+          const merged = Object.assign({}, j, slots);
+          // A framing-only write that raced ahead of hydration must not
+          // drop a user image that's only on disk — inherit u from the
+          // sidecar for any in-memory entry that lacks one.
+          for (const k in slots) {
+            if (merged[k] && !merged[k].u && j[k]) {
+              merged[k].u = typeof j[k] === 'string' ? j[k] : j[k].u;
+            }
+          }
+          for (const id of tombstones) delete merged[id];
+          slots = merged;
+        }
+        tombstones.clear();
+      })
+      .catch(() => {})
+      .then(() => { loaded = true; subs.forEach((fn) => fn()); });
+    return loadP;
+  }
+
+  // Serialize writes so two near-simultaneous drops on different slots
+  // can't reorder at the backend and leave the sidecar with only the
+  // first. A save requested mid-flight just marks dirty and re-fires on
+  // completion with the then-current slots.
+  let saving = false;
+  let saveDirty = false;
+  function save() {
+    if (saving) { saveDirty = true; return; }
+    const w = window.omelette && window.omelette.writeFile;
+    if (!w) return;
+    saving = true;
+    Promise.resolve(w(STATE_FILE, JSON.stringify(slots)))
+      .catch(() => {})
+      .then(() => { saving = false; if (saveDirty) { saveDirty = false; save(); } });
+  }
+
+  const S_MAX = 5;
+  const clampS = (s) => Math.max(1, Math.min(S_MAX, s));
+
+  // Normalize a stored slot value. Pre-reframe sidecars stored a bare
+  // data-URL string; newer ones store {u, s, x, y}. Either shape is valid.
+  function getSlot(id) {
+    const v = slots[id];
+    if (!v) return null;
+    return typeof v === 'string' ? { u: v, s: 1, x: 0, y: 0 } : v;
+  }
+
+  function setSlot(id, val) {
+    if (!id) return;
+    if (val) { slots[id] = val; tombstones.delete(id); }
+    else { delete slots[id]; if (!loaded) tombstones.add(id); }
+    subs.forEach((fn) => fn());
+    // A drop is rare + high-value — write immediately so nav-away can't lose
+    // it. Gate on the initial read so we don't overwrite a sidecar we haven't
+    // merged yet; the merge in load() keeps this change once the read lands.
+    if (loaded) save(); else load().then(save);
+  }
+
+  // ── Image downscale ─────────────────────────────────────────────────────
+  // Encode through a canvas so the sidecar carries resized bytes, not the
+  // raw upload. Longest side is capped at 2× the slot's rendered width
+  // (retina) and at MAX_DIM. WebP keeps alpha and is ~10× smaller than PNG
+  // for photos, so there's no need for per-image format picking.
+  async function toDataUrl(file, targetW) {
+    const bitmap = await createImageBitmap(file);
+    try {
+      const cap = Math.min(MAX_DIM, Math.max(1, Math.round(targetW * 2)) || MAX_DIM);
+      const scale = Math.min(1, cap / Math.max(bitmap.width, bitmap.height));
+      const w = Math.max(1, Math.round(bitmap.width * scale));
+      const h = Math.max(1, Math.round(bitmap.height * scale));
+      const canvas = document.createElement('canvas');
+      canvas.width = w; canvas.height = h;
+      canvas.getContext('2d').drawImage(bitmap, 0, 0, w, h);
+      return canvas.toDataURL('image/webp', 0.85);
+    } finally {
+      bitmap.close && bitmap.close();
+    }
+  }
+
+  // ── Custom element ──────────────────────────────────────────────────────
+  const stylesheet =
+    ':host{display:inline-block;position:relative;vertical-align:top;' +
+    '  font:13px/1.3 system-ui,-apple-system,sans-serif;color:rgba(0,0,0,.55);width:240px;height:160px}' +
+    '.frame{position:absolute;inset:0;overflow:hidden;background:rgba(0,0,0,.04)}' +
+    // .frame img (clipped) and .spill (unclipped ghost + handles) share the
+    // same left/top/width/height in frame-%, computed by _applyView(), so the
+    // inside-mask crop and the outside-mask spill stay pixel-aligned.
+    '.frame img{position:absolute;max-width:none;transform:translate(-50%,-50%);' +
+    '  -webkit-user-drag:none;user-select:none;touch-action:none}' +
+    // Reframe mode (double-click): the full image spills past the mask. The
+    // spill layer is sized to the IMAGE bounds so its corners are where the
+    // resize handles belong. The ghost <img> inside is translucent; the real
+    // clipped <img> underneath shows the opaque in-mask crop.
+    '.spill{position:absolute;transform:translate(-50%,-50%);display:none;z-index:1;' +
+    '  cursor:grab;touch-action:none}' +
+    ':host([data-panning]) .spill{cursor:grabbing}' +
+    '.spill .ghost{position:absolute;inset:0;width:100%;height:100%;opacity:.35;' +
+    '  pointer-events:none;-webkit-user-drag:none;user-select:none;' +
+    '  box-shadow:0 0 0 1px rgba(0,0,0,.2),0 12px 32px rgba(0,0,0,.2)}' +
+    '.spill .handle{position:absolute;width:12px;height:12px;border-radius:50%;' +
+    '  background:#fff;box-shadow:0 0 0 1.5px #c96442,0 1px 3px rgba(0,0,0,.3);' +
+    '  transform:translate(-50%,-50%)}' +
+    '.spill .handle[data-c=nw]{left:0;top:0;cursor:nwse-resize}' +
+    '.spill .handle[data-c=ne]{left:100%;top:0;cursor:nesw-resize}' +
+    '.spill .handle[data-c=sw]{left:0;top:100%;cursor:nesw-resize}' +
+    '.spill .handle[data-c=se]{left:100%;top:100%;cursor:nwse-resize}' +
+    ':host([data-reframe]){z-index:10}' +
+    ':host([data-reframe]) .spill{display:block}' +
+    ':host([data-reframe]) .frame{box-shadow:0 0 0 2px #c96442}' +
+    '.empty{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;' +
+    '  justify-content:center;gap:6px;text-align:center;padding:12px;box-sizing:border-box;' +
+    '  cursor:pointer;user-select:none}' +
+    '.empty svg{opacity:.45}' +
+    '.empty .cap{max-width:90%;font-weight:500;letter-spacing:.01em}' +
+    '.empty .sub{font-size:11px}' +
+    '.empty .sub u{text-underline-offset:2px;text-decoration-color:rgba(0,0,0,.25)}' +
+    '.empty:hover .sub u{color:rgba(0,0,0,.75);text-decoration-color:currentColor}' +
+    ':host([data-over]) .frame{outline:2px solid #c96442;outline-offset:-2px;' +
+    '  background:rgba(201,100,66,.10)}' +
+    '.ring{position:absolute;inset:0;pointer-events:none;border:1.5px dashed rgba(0,0,0,.25);' +
+    '  transition:border-color .12s}' +
+    ':host([data-over]) .ring{border-color:#c96442}' +
+    ':host([data-filled]) .ring{display:none}' +
+    // Controls sit BELOW the mask (top:100%), absolutely positioned so the
+    // author-declared slot height is unaffected. The gap is padding, not a
+    // top offset, so the hover target stays contiguous with the frame.
+    '.ctl{position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:8px;' +
+    '  display:flex;gap:6px;opacity:0;pointer-events:none;transition:opacity .12s;z-index:2;' +
+    '  white-space:nowrap}' +
+    ':host([data-filled][data-editable]:hover) .ctl,:host([data-reframe]) .ctl' +
+    '  {opacity:1;pointer-events:auto}' +
+    '.ctl button{appearance:none;border:0;border-radius:6px;padding:5px 10px;cursor:pointer;' +
+    '  background:rgba(0,0,0,.65);color:#fff;font:11px/1 system-ui,-apple-system,sans-serif;' +
+    '  backdrop-filter:blur(6px)}' +
+    '.ctl button:hover{background:rgba(0,0,0,.8)}' +
+    '.err{position:absolute;left:8px;bottom:8px;right:8px;color:#b3261e;font-size:11px;' +
+    '  background:rgba(255,255,255,.85);padding:4px 6px;border-radius:5px;pointer-events:none}';
+
+  const icon =
+    '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+    'stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">' +
+    '<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>' +
+    '<path d="m21 15-5-5L5 21"/></svg>';
+
+  class ImageSlot extends HTMLElement {
+    static get observedAttributes() {
+      return ['shape', 'radius', 'mask', 'fit', 'position', 'placeholder', 'src', 'id'];
+    }
+
+    constructor() {
+      super();
+      const root = this.attachShadow({ mode: 'open' });
+      // .spill and .ctl sit OUTSIDE .frame so overflow:hidden + border-radius
+      // on the frame (circle, pill, rounded) can't clip them.
+      root.innerHTML =
+        '<style>' + stylesheet + '</style>' +
+        '<div class="frame" part="frame">' +
+        '  <img part="image" alt="" draggable="false" style="display:none">' +
+        '  <div class="empty" part="empty">' + icon +
+        '    <div class="cap"></div>' +
+        '    <div class="sub">or <u>browse files</u></div></div>' +
+        '  <div class="ring" part="ring"></div>' +
+        '</div>' +
+        '<div class="spill">' +
+        '  <img class="ghost" alt="" draggable="false">' +
+        '  <div class="handle" data-c="nw"></div><div class="handle" data-c="ne"></div>' +
+        '  <div class="handle" data-c="sw"></div><div class="handle" data-c="se"></div>' +
+        '</div>' +
+        '<div class="ctl"><button data-act="replace" title="Replace image">Replace</button>' +
+        '  <button data-act="clear" title="Remove image">Remove</button></div>' +
+        '<input type="file" accept="' + ACCEPT.join(',') + '" hidden>';
+      this._frame = root.querySelector('.frame');
+      this._ring = root.querySelector('.ring');
+      this._img = root.querySelector('.frame img');
+      this._empty = root.querySelector('.empty');
+      this._cap = root.querySelector('.cap');
+      this._sub = root.querySelector('.sub');
+      this._spill = root.querySelector('.spill');
+      this._ghost = root.querySelector('.ghost');
+      this._err = null;
+      this._input = root.querySelector('input');
+      this._depth = 0;
+      this._gen = 0;
+      this._view = { s: 1, x: 0, y: 0 };
+      this._subFn = () => this._render();
+      // Shadow-DOM listeners live with the shadow DOM — bound once here so
+      // disconnect/reconnect (e.g. React remount) doesn't stack handlers.
+      this._empty.addEventListener('click', () => this._input.click());
+      root.addEventListener('click', (e) => {
+        const act = e.target && e.target.getAttribute && e.target.getAttribute('data-act');
+        if (act === 'replace') { this._exitReframe(true); this._input.click(); }
+        if (act === 'clear') {
+          this._exitReframe(false);
+          this._gen++;
+          this._local = null;
+          if (this.id) setSlot(this.id, null); else this._render();
+        }
+      });
+      this._input.addEventListener('change', () => {
+        const f = this._input.files && this._input.files[0];
+        if (f) this._ingest(f);
+        this._input.value = '';
+      });
+      // naturalWidth/Height aren't known until load — re-apply so the cover
+      // baseline is computed from real dimensions, not the 100%×100% fallback.
+      this._img.addEventListener('load', () => this._applyView());
+      // Gated on editable + fit=cover so share links and contain/fill slots
+      // stay static.
+      this.addEventListener('dblclick', (e) => {
+        if (!this.hasAttribute('data-editable') || !this._reframes()) return;
+        e.preventDefault();
+        if (this.hasAttribute('data-reframe')) this._exitReframe(true);
+        else this._enterReframe();
+      });
+      // Pan + resize both originate on the spill layer. A handle pointerdown
+      // drives an aspect-locked resize anchored at the opposite corner; any
+      // other pointerdown on the spill pans. Offsets are frame-% so a
+      // reframed slot survives responsive resize / PPTX export.
+      this._spill.addEventListener('pointerdown', (e) => {
+        if (e.button !== 0 || !this.hasAttribute('data-reframe')) return;
+        e.preventDefault();
+        e.stopPropagation();
+        this._spill.setPointerCapture(e.pointerId);
+        const rect = this.getBoundingClientRect();
+        const fw = rect.width || 1, fh = rect.height || 1;
+        const corner = e.target.getAttribute && e.target.getAttribute('data-c');
+        let move;
+        if (corner) {
+          // Resize about the OPPOSITE corner. Viewport-px throughout (rect
+          // fw/fh, not clientWidth) so the math survives a transform:scale()
+          // ancestor — deck_stage renders slides scaled-to-fit.
+          const iw = this._img.naturalWidth || 1, ih = this._img.naturalHeight || 1;
+          const base = Math.max(fw / iw, fh / ih);
+          const sx = corner.includes('e') ? 1 : -1;
+          const sy = corner.includes('s') ? 1 : -1;
+          const s0 = this._view.s;
+          const w0 = iw * base * s0, h0 = ih * base * s0;
+          const cx0 = (50 + this._view.x) / 100 * fw;
+          const cy0 = (50 + this._view.y) / 100 * fh;
+          const ox = cx0 - sx * w0 / 2, oy = cy0 - sy * h0 / 2;
+          const diag0 = Math.hypot(w0, h0);
+          const ux = sx * w0 / diag0, uy = sy * h0 / diag0;
+          move = (ev) => {
+            const proj = (ev.clientX - rect.left - ox) * ux +
+                         (ev.clientY - rect.top - oy) * uy;
+            const s = clampS(s0 * proj / diag0);
+            const d = diag0 * s / s0;
+            this._view.s = s;
+            this._view.x = (ox + ux * d / 2) / fw * 100 - 50;
+            this._view.y = (oy + uy * d / 2) / fh * 100 - 50;
+            this._clampView();
+            this._applyView();
+          };
+        } else {
+          this.setAttribute('data-panning', '');
+          const start = { px: e.clientX, py: e.clientY, x: this._view.x, y: this._view.y };
+          move = (ev) => {
+            this._view.x = start.x + (ev.clientX - start.px) / fw * 100;
+            this._view.y = start.y + (ev.clientY - start.py) / fh * 100;
+            this._clampView();
+            this._applyView();
+          };
+        }
+        const up = () => {
+          try { this._spill.releasePointerCapture(e.pointerId); } catch {}
+          this._spill.removeEventListener('pointermove', move);
+          this._spill.removeEventListener('pointerup', up);
+          this._spill.removeEventListener('pointercancel', up);
+          this.removeAttribute('data-panning');
+          this._dragUp = null;
+        };
+        // Stashed so _exitReframe (Escape / outside-click mid-drag) can
+        // tear the capture + listeners down synchronously.
+        this._dragUp = up;
+        this._spill.addEventListener('pointermove', move);
+        this._spill.addEventListener('pointerup', up);
+        this._spill.addEventListener('pointercancel', up);
+      });
+      // Wheel zoom stays available inside reframe mode as a trackpad nicety —
+      // zooms toward the cursor (offset' = cursor·(1-k) + offset·k).
+      this.addEventListener('wheel', (e) => {
+        if (!this.hasAttribute('data-reframe')) return;
+        e.preventDefault();
+        const r = this.getBoundingClientRect();
+        const cx = (e.clientX - r.left) / r.width * 100 - 50;
+        const cy = (e.clientY - r.top) / r.height * 100 - 50;
+        const prev = this._view.s;
+        const next = clampS(prev * Math.pow(1.0015, -e.deltaY));
+        if (next === prev) return;
+        const k = next / prev;
+        this._view.s = next;
+        this._view.x = cx * (1 - k) + this._view.x * k;
+        this._view.y = cy * (1 - k) + this._view.y * k;
+        this._clampView();
+        this._applyView();
+      }, { passive: false });
+    }
+
+    connectedCallback() {
+      // Warn once per page — an id-less slot works for the session but
+      // cannot persist, and two id-less slots would share nothing.
+      if (!this.id && !ImageSlot._warned) {
+        ImageSlot._warned = true;
+        console.warn('<image-slot> without an id will not persist its dropped image.');
+      }
+      this.addEventListener('dragenter', this);
+      this.addEventListener('dragover', this);
+      this.addEventListener('dragleave', this);
+      this.addEventListener('drop', this);
+      subs.add(this._subFn);
+      // width%/height% in _applyView encode the frame aspect at call time —
+      // a host resize (responsive grid, pane divider) would stretch the
+      // image until the next _render. Re-render on size change: _render()
+      // re-seeds _view from stored before clamp/apply, so a shrink→grow
+      // cycle round-trips instead of ratcheting x/y toward the narrower
+      // frame's clamp range.
+      this._ro = new ResizeObserver(() => this._render());
+      this._ro.observe(this);
+      load();
+      this._render();
+    }
+
+    disconnectedCallback() {
+      subs.delete(this._subFn);
+      this.removeEventListener('dragenter', this);
+      this.removeEventListener('dragover', this);
+      this.removeEventListener('dragleave', this);
+      this.removeEventListener('drop', this);
+      if (this._ro) { this._ro.disconnect(); this._ro = null; }
+      this._exitReframe(false);
+    }
+
+    _enterReframe() {
+      if (this.hasAttribute('data-reframe')) return;
+      this.setAttribute('data-reframe', '');
+      this._applyView();
+      // Close on click outside (the spill handler stopPropagation()s so
+      // in-image drags don't reach this) and on Escape. Listeners are held
+      // on the instance so _exitReframe / disconnectedCallback can detach
+      // exactly what was attached.
+      this._outside = (e) => {
+        if (e.composedPath && e.composedPath().includes(this)) return;
+        this._exitReframe(true);
+      };
+      this._esc = (e) => { if (e.key === 'Escape') this._exitReframe(true); };
+      document.addEventListener('pointerdown', this._outside, true);
+      document.addEventListener('keydown', this._esc, true);
+    }
+
+    _exitReframe(commit) {
+      if (!this.hasAttribute('data-reframe')) return;
+      if (this._dragUp) this._dragUp();
+      this.removeAttribute('data-reframe');
+      this.removeAttribute('data-panning');
+      if (this._outside) document.removeEventListener('pointerdown', this._outside, true);
+      if (this._esc) document.removeEventListener('keydown', this._esc, true);
+      this._outside = this._esc = null;
+      if (commit) this._commitView();
+    }
+
+    attributeChangedCallback() { if (this.shadowRoot) this._render(); }
+
+    // handleEvent — one listener object for all four drag events keeps the
+    // add/remove symmetric and the depth counter correct.
+    handleEvent(e) {
+      if (e.type === 'dragenter' || e.type === 'dragover') {
+        // Without preventDefault the browser never fires 'drop'.
+        e.preventDefault();
+        e.stopPropagation();
+        if (e.dataTransfer) e.dataTransfer.dropEffect = 'copy';
+        if (e.type === 'dragenter') this._depth++;
+        this.setAttribute('data-over', '');
+      } else if (e.type === 'dragleave') {
+        // dragenter/leave fire for every descendant crossing — count depth
+        // so hovering the icon inside the empty state doesn't flicker.
+        if (--this._depth <= 0) { this._depth = 0; this.removeAttribute('data-over'); }
+      } else if (e.type === 'drop') {
+        e.preventDefault();
+        e.stopPropagation();
+        this._depth = 0;
+        this.removeAttribute('data-over');
+        const f = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+        if (f) this._ingest(f);
+      }
+    }
+
+    async _ingest(file) {
+      this._setError(null);
+      if (!file || ACCEPT.indexOf(file.type) < 0) {
+        this._setError('Drop a PNG, JPEG, WebP, or AVIF image.');
+        return;
+      }
+      // toDataUrl can take hundreds of ms on a large photo. A Clear or a
+      // newer drop during that window would be clobbered when this await
+      // resumes — bump + capture a generation so stale encodes bail.
+      const gen = ++this._gen;
+      try {
+        const w = this.clientWidth || this.offsetWidth || MAX_DIM;
+        const url = await toDataUrl(file, w);
+        if (gen !== this._gen) return;
+        // Only exit reframe once the new image is in hand — a rejected type
+        // or decode failure leaves the in-progress crop untouched.
+        this._exitReframe(false);
+        const val = { u: url, s: 1, x: 0, y: 0 };
+        setSlot(this.id || '', val);
+        // Keep a session-local copy for id-less slots so the drop still
+        // shows, even though it cannot persist.
+        if (!this.id) { this._local = val; this._render(); }
+      } catch (err) {
+        if (gen !== this._gen) return;
+        this._setError('Could not read that image.');
+        console.warn('<image-slot> ingest failed:', err);
+      }
+    }
+
+    _setError(msg) {
+      if (this._err) { this._err.remove(); this._err = null; }
+      if (!msg) return;
+      const d = document.createElement('div');
+      d.className = 'err'; d.textContent = msg;
+      this.shadowRoot.appendChild(d);
+      this._err = d;
+      setTimeout(() => { if (this._err === d) { d.remove(); this._err = null; } }, 3000);
+    }
+
+    // Reframing (pan/resize) is only meaningful for fit=cover — contain/fill
+    // keep the old object-fit path and double-click is a no-op.
+    _reframes() {
+      return this.hasAttribute('data-filled') &&
+        (this.getAttribute('fit') || 'cover') === 'cover';
+    }
+
+    // Cover-baseline geometry, shared by clamp/apply/resize. Null until the
+    // img has loaded (naturalWidth is 0 before that) or when the slot has no
+    // layout box — ResizeObserver fires with a 0×0 rect under display:none,
+    // and clamping against a degenerate 1×1 frame would silently pull the
+    // stored pan toward zero.
+    _geom() {
+      const iw = this._img.naturalWidth, ih = this._img.naturalHeight;
+      const fw = this.clientWidth, fh = this.clientHeight;
+      if (!iw || !ih || !fw || !fh) return null;
+      return { iw, ih, fw, fh, base: Math.max(fw / iw, fh / ih) };
+    }
+
+    _clampView() {
+      // Pan range on each axis is half the overflow past the frame edge.
+      const g = this._geom();
+      if (!g) return;
+      const mx = Math.max(0, (g.iw * g.base * this._view.s / g.fw - 1) * 50);
+      const my = Math.max(0, (g.ih * g.base * this._view.s / g.fh - 1) * 50);
+      this._view.x = Math.max(-mx, Math.min(mx, this._view.x));
+      this._view.y = Math.max(-my, Math.min(my, this._view.y));
+    }
+
+    _applyView() {
+      const g = this._geom();
+      const fit = this.getAttribute('fit') || 'cover';
+      if (fit !== 'cover' || !g) {
+        // Non-cover, or dimensions not known yet (before img load).
+        this._img.style.width = '100%';
+        this._img.style.height = '100%';
+        this._img.style.left = '50%';
+        this._img.style.top = '50%';
+        this._img.style.objectFit = fit;
+        this._img.style.objectPosition = this.getAttribute('position') || '50% 50%';
+        return;
+      }
+      // Cover baseline: img fills the frame on its tighter axis at s=1, so
+      // pan works immediately on the overflowing axis without zooming first.
+      // Width/height and left/top are all frame-% — depends only on the
+      // frame aspect ratio, so a responsive resize keeps the same crop. The
+      // spill layer mirrors the same box so its corners = image corners.
+      const k = g.base * this._view.s;
+      const w = (g.iw * k / g.fw * 100) + '%';
+      const h = (g.ih * k / g.fh * 100) + '%';
+      const l = (50 + this._view.x) + '%';
+      const t = (50 + this._view.y) + '%';
+      this._img.style.width = w; this._img.style.height = h;
+      this._img.style.left = l; this._img.style.top = t;
+      this._img.style.objectFit = '';
+      this._spill.style.width = w; this._spill.style.height = h;
+      this._spill.style.left = l; this._spill.style.top = t;
+    }
+
+    _commitView() {
+      const v = { s: this._view.s, x: this._view.x, y: this._view.y };
+      if (this._userUrl) v.u = this._userUrl;
+      // Framing-only (no u) persists too so an author-src slot remembers its
+      // crop; clearing the sidecar still falls through to src=.
+      if (this.id) setSlot(this.id, v);
+      else { this._local = v; }
+    }
+
+    _render() {
+      // Shape / mask. Presets use border-radius so the dashed ring can
+      // follow the rounded outline; clip-path is only applied for an
+      // explicit `mask` (the ring is hidden there since a rectangle
+      // dashed border chopped by an arbitrary polygon looks broken).
+      const mask = this.getAttribute('mask');
+      const shape = (this.getAttribute('shape') || 'rounded').toLowerCase();
+      let radius = '';
+      if (shape === 'circle') radius = '50%';
+      else if (shape === 'pill') radius = '9999px';
+      else if (shape === 'rounded') {
+        const n = parseFloat(this.getAttribute('radius'));
+        radius = (Number.isFinite(n) ? n : 12) + 'px';
+      }
+      this._frame.style.borderRadius = mask ? '' : radius;
+      this._frame.style.clipPath = mask || '';
+      this._ring.style.borderRadius = mask ? '' : radius;
+      this._ring.style.display = mask ? 'none' : '';
+
+      // Controls and reframe entry gate on this so share links stay read-only.
+      const editable = !!(window.omelette && window.omelette.writeFile);
+      this.toggleAttribute('data-editable', editable);
+      this._sub.style.display = editable ? '' : 'none';
+
+      // Content. The sidecar is also writable by the agent's write_file
+      // tool, so its value isn't guaranteed canvas-originated — only accept
+      // data:image/ URLs from it. The `src` attribute is author-controlled
+      // (Claude wrote it into the HTML) so it passes through unchanged.
+      let stored = this.id ? getSlot(this.id) : this._local;
+      if (stored && stored.u && !/^data:image\//i.test(stored.u)) stored = null;
+      const srcAttr = this.getAttribute('src') || '';
+      this._userUrl = (stored && stored.u) || null;
+      const url = this._userUrl || srcAttr;
+      // Don't clobber an in-flight reframe with a store-triggered re-render.
+      if (!this.hasAttribute('data-reframe')) {
+        this._view = {
+          s: stored && Number.isFinite(stored.s) ? clampS(stored.s) : 1,
+          x: stored && Number.isFinite(stored.x) ? stored.x : 0,
+          y: stored && Number.isFinite(stored.y) ? stored.y : 0,
+        };
+      }
+      this._cap.textContent = this.getAttribute('placeholder') || 'Drop an image';
+      // Toggle via style.display — the [hidden] attribute alone loses to
+      // the display:flex / display:block rules in the stylesheet above.
+      if (url) {
+        if (this._img.getAttribute('src') !== url) {
+          this._img.src = url;
+          this._ghost.src = url;
+        }
+        this._img.style.display = 'block';
+        this._empty.style.display = 'none';
+        this.setAttribute('data-filled', '');
+        this._clampView();
+        this._applyView();
+      } else {
+        this._img.style.display = 'none';
+        this._img.removeAttribute('src');
+        this._ghost.removeAttribute('src');
+        this._empty.style.display = 'flex';
+        this.removeAttribute('data-filled');
+      }
+    }
+  }
+
+  if (!customElements.get('image-slot')) {
+    customElements.define('image-slot', ImageSlot);
+  }
+})();
+
+</script>
+<script>
+/* ============================================================
+   THE CLEAN ARCHITECT — interactions
+   ============================================================ */
+
+// ---------- Hero on-load stagger ----------
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.hero .fade-up').forEach((el) => {
+    const delay = parseInt(el.dataset.delay || '0', 10);
+    setTimeout(() => el.classList.add('in'), delay);
+  });
+});
+
+// ---------- Counter animation ----------
+function animateCounter(el, to, duration = 1500, decimals = 0) {
+  const start = performance.now();
+  const from = 0;
+  const suffix = el.dataset.suffix || '';
+  const ease = (t) => 1 - Math.pow(1 - t, 3);
+  function fmt(v) {
+    return (decimals > 0 ? v.toFixed(decimals) : Math.round(v).toLocaleString('en-US')) + suffix;
+  }
+  function tick(now) {
+    const t = Math.min(1, (now - start) / duration);
+    const v = from + (to - from) * ease(t);
+    el.textContent = fmt(v);
+    if (t < 1) requestAnimationFrame(tick);
+    else el.textContent = fmt(to);
+  }
+  requestAnimationFrame(tick);
+}
+document.querySelectorAll('.num-counter[data-suffix]').forEach(el => {
+  el.textContent = '0' + (el.dataset.suffix || '');
+});
+const numbersGrid = document.getElementById('numbersGrid');
+if (numbersGrid) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.num-counter').forEach(el => {
+          const to = parseFloat(el.dataset.to);
+          const decimals = parseInt(el.dataset.decimals || '0', 10);
+          animateCounter(el, to, 1500, decimals);
+        });
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.35 });
+  io.observe(numbersGrid);
+}
+
+// ---------- Generic scroll-reveal ----------
+const revealIO = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in');
+      revealIO.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll('.reveal').forEach(el => revealIO.observe(el));
+
+// ---------- Package tabs + galleries ----------
+document.querySelectorAll('.pkg-card').forEach(card => {
+  const tabs = card.querySelectorAll('.pkg-tab');
+  const dyn = card.querySelector('.pkg-dyn');
+  const priceEl = card.querySelector('.pkg-price');
+  const galleries = card.querySelectorAll('.pkg-gallery');
+  if (!tabs.length || !dyn) return;
+
+  // Pre-built content blocks keyed by data-tab on .pkg-content
+  const contents = card.querySelectorAll('.pkg-content');
+  const contentById = {};
+  contents.forEach(c => { contentById[c.dataset.tab] = c.innerHTML; });
+
+  function activate(tabId) {
+    tabs.forEach(t => t.classList.toggle('is-active', t.dataset.tab === tabId));
+    galleries.forEach(g => g.classList.toggle('is-active', g.dataset.tab === tabId));
+    // Reset gallery to first slide whenever switching tab
+    const activeGallery = card.querySelector(`.pkg-gallery[data-tab="${tabId}"]`);
+    if (activeGallery) goToSlide(activeGallery, 0);
+
+    const newHtml = contentById[tabId];
+    const tabEl = card.querySelector(`.pkg-tab[data-tab="${tabId}"]`);
+    const newPrice = tabEl && tabEl.dataset.price;
+
+    dyn.classList.add('is-fading');
+    if (priceEl && newPrice) priceEl.classList.add('is-fading');
+
+    setTimeout(() => {
+      if (newHtml != null) dyn.innerHTML = newHtml;
+      if (priceEl && newPrice) priceEl.textContent = newPrice;
+      dyn.classList.remove('is-fading');
+      if (priceEl && newPrice) priceEl.classList.remove('is-fading');
+    }, 200);
+  }
+  tabs.forEach(tab => tab.addEventListener('click', () => activate(tab.dataset.tab)));
+});
+
+// ---------- Mini-galleries (slider per tab) ----------
+function goToSlide(gallery, idx) {
+  const slides = gallery.querySelectorAll('.pkg-slide');
+  if (!slides.length) return;
+  const n = slides.length;
+  const target = ((idx % n) + n) % n;
+  slides.forEach((s, i) => s.classList.toggle('is-active', i === target));
+  gallery.dataset.current = target;
+  const dotsContainer = gallery.querySelector('.gallery-dots');
+  if (dotsContainer) {
+    [...dotsContainer.children].forEach((d, i) => d.classList.toggle('is-active', i === target));
+  }
+}
+
+document.querySelectorAll('.pkg-galleries').forEach(group => {
+  const galleries = group.querySelectorAll('.pkg-gallery');
+  const dotsEl = group.querySelector('.gallery-dots');
+
+  function rebuildDots() {
+    const active = group.querySelector('.pkg-gallery.is-active');
+    if (!active || !dotsEl) return;
+    const slides = active.querySelectorAll('.pkg-slide');
+    dotsEl.innerHTML = '';
+    slides.forEach((_, i) => {
+      const b = document.createElement('button');
+      b.className = 'gallery-dot' + (slides[i].classList.contains('is-active') ? ' is-active' : '');
+      b.setAttribute('aria-label', `Slide ${i + 1}`);
+      b.addEventListener('click', () => goToSlide(active, i));
+      dotsEl.appendChild(b);
+    });
+  }
+  rebuildDots();
+
+  // Prev / Next
+  group.querySelector('.gallery-nav.prev').addEventListener('click', () => {
+    const active = group.querySelector('.pkg-gallery.is-active');
+    if (!active) return;
+    const cur = parseInt(active.dataset.current || '0', 10);
+    goToSlide(active, cur - 1);
+  });
+  group.querySelector('.gallery-nav.next').addEventListener('click', () => {
+    const active = group.querySelector('.pkg-gallery.is-active');
+    if (!active) return;
+    const cur = parseInt(active.dataset.current || '0', 10);
+    goToSlide(active, cur + 1);
+  });
+
+  // Observe class changes on galleries to rebuild dots when tab switches
+  const mo = new MutationObserver(() => rebuildDots());
+  galleries.forEach(g => mo.observe(g, { attributes: true, attributeFilter: ['class'] }));
+});
+
+// ---------- Add-ons + Cars (shared total) ----------
+function formatMoney(n) { return '$' + n.toLocaleString('en-US'); }
+const addonTotalEl = document.getElementById('addonTotal');
+function recalcAddonTotal() {
+  let total = 0;
+  document.querySelectorAll('.addon-btn[data-added="true"], .car-add[data-added="true"]').forEach(b => {
+    total += parseInt(b.dataset.price || '0', 10);
+  });
+  if (addonTotalEl) addonTotalEl.textContent = formatMoney(total);
+}
+document.querySelectorAll('.addon-btn, .car-add').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const added = btn.getAttribute('data-added') === 'true';
+    btn.setAttribute('data-added', added ? 'false' : 'true');
+    recalcAddonTotal();
+  });
+});
+
+// ---------- Cars carousel (nav + dots) ----------
+(function () {
+  const track = document.getElementById('cars-track');
+  const prev = document.getElementById('cars-prev');
+  const next = document.getElementById('cars-next');
+  const dotsEl = document.getElementById('cars-dots');
+  if (!track) return;
+  const cards = track.querySelectorAll('.car-card');
+  if (!cards.length) return;
+
+  function step() {
+    return cards[0].offsetWidth + 20; // card + gap
+  }
+  function syncNav() {
+    if (!prev || !next) return;
+    const max = track.scrollWidth - track.clientWidth - 2;
+    prev.disabled = track.scrollLeft <= 2;
+    next.disabled = track.scrollLeft >= max;
+  }
+  if (prev) prev.addEventListener('click', () => {
+    track.scrollBy({ left: -step(), behavior: 'smooth' });
+  });
+  if (next) next.addEventListener('click', () => {
+    track.scrollBy({ left: step(), behavior: 'smooth' });
+  });
+  track.addEventListener('scroll', syncNav, { passive: true });
+  window.addEventListener('resize', syncNav);
+  syncNav();
+
+  // Dots
+  if (dotsEl) {
+    cards.forEach((_, i) => {
+      const b = document.createElement('button');
+      b.className = 'gallery-dot' + (i === 0 ? ' is-active' : '');
+      b.setAttribute('aria-label', `Car ${i + 1}`);
+      b.addEventListener('click', () => {
+        track.scrollTo({ left: cards[i].offsetLeft - track.offsetLeft, behavior: 'smooth' });
+      });
+      dotsEl.appendChild(b);
+    });
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting && e.intersectionRatio > 0.55) {
+          const idx = [...cards].indexOf(e.target);
+          [...dotsEl.children].forEach((d, i) => d.classList.toggle('is-active', i === idx));
+        }
+      });
+    }, { root: track, threshold: [0.55, 0.8] });
+    cards.forEach(c => io.observe(c));
+  }
+})();
+
+// ---------- Lightbox (YouTube cinematic films) ----------
+(function () {
+  const lb = document.getElementById('lightbox');
+  if (!lb) return;
+  const lbTag = document.getElementById('lb-tag');
+  const lbTitle = document.getElementById('lb-title');
+  const lbSub = document.getElementById('lb-sub');
+  const lbVideo = document.getElementById('lb-video');
+  const lbClose = document.getElementById('lb-close');
+
+  function open(data) {
+    if (data.tag && lbTag) lbTag.textContent = data.tag;
+    if (data.title && lbTitle) lbTitle.textContent = data.title;
+    if (data.sub && lbSub) lbSub.textContent = data.sub;
+    lbVideo.innerHTML = '';
+    if (data.ytId) {
+      const iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube.com/embed/' + encodeURIComponent(data.ytId)
+        + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+      iframe.title = data.title || 'Proposal film';
+      iframe.setAttribute('allow', 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share');
+      iframe.setAttribute('allowfullscreen', '');
+      iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+      lbVideo.appendChild(iframe);
+      lb.classList.add('is-playing');
+    } else {
+      lb.classList.remove('is-playing');
+    }
+    lb.classList.add('is-open');
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function close() {
+    lb.classList.remove('is-open');
+    lb.classList.remove('is-playing');
+    lb.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    // Stop playback by clearing the iframe.
+    lbVideo.innerHTML = '';
+  }
+
+  function bind(el) {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      open({
+        ytId: el.dataset.ytId,
+        tag: el.dataset.lbTag,
+        title: el.dataset.lbTitle,
+        sub: el.dataset.lbSub,
+      });
+    });
+  }
+  document.querySelectorAll('.video-thumb, .watch-films-link').forEach(bind);
+
+  lbClose.addEventListener('click', close);
+  lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lb.classList.contains('is-open')) close();
+  });
+})();
+
+// ---------- FAQ accordion ----------
+document.querySelectorAll('.faq-item').forEach(item => {
+  const btn = item.querySelector('.faq-question');
+  const answer = item.querySelector('.faq-answer');
+  if (!btn || !answer) return;
+  btn.addEventListener('click', () => {
+    const open = item.getAttribute('data-open') === 'true';
+    if (open) {
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      requestAnimationFrame(() => { answer.style.maxHeight = '0px'; });
+      item.setAttribute('data-open', 'false');
+      btn.setAttribute('aria-expanded', 'false');
+    } else {
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      item.setAttribute('data-open', 'true');
+      btn.setAttribute('aria-expanded', 'true');
+      answer.addEventListener('transitionend', function handler() {
+        if (item.getAttribute('data-open') === 'true') {
+          answer.style.maxHeight = 'none';
+        }
+        answer.removeEventListener('transitionend', handler);
+      });
+    }
+  });
+});
+
+
+</script>
+</body>
+</html>
