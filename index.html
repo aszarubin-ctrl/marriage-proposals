@@ -111,6 +111,9 @@ body {
   margin: 0 0 28px;
 }
 .eyebrow .dot { color: var(--line-dot); margin: 0 8px; }
+/* Keep each label glued to its trailing separator so a "·" never wraps
+   to the start of a new line. */
+.eyebrow .eb-seg { white-space: nowrap; }
 
 h1.display {
   font-family: var(--font-display);
@@ -2107,7 +2110,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="hero-left">
 
         <p class="eyebrow fade-up" data-delay="0">
-          Punta Cana <span class="dot">·</span> Dominican Republic <span class="dot">·</span> Since 2020
+          <span class="eb-seg">Punta Cana <span class="dot">·</span></span> <span class="eb-seg">Dominican Republic <span class="dot">·</span></span> <span class="eb-seg">Since 2020</span>
         </p>
 
         <h1 class="display fade-up" data-delay="100">
