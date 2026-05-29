@@ -802,6 +802,10 @@ h2.section-title em { font-style: italic; color: var(--emerald); }
   border-radius: var(--radius-sm);
   overflow: hidden;
   background: #e7e1d4;
+  /* Let our JS own horizontal swipes (so they don't trigger browser
+     back-navigation); vertical page scroll still works. */
+  touch-action: pan-y;
+  overscroll-behavior-x: contain;
 }
 .pkg-gallery {
   position: absolute;
@@ -3935,7 +3939,9 @@ function goToSlide(gallery, idx) {
   const target = ((idx % n) + n) % n;
   slides.forEach((s, i) => s.classList.toggle('is-active', i === target));
   gallery.dataset.current = target;
-  const dotsContainer = gallery.querySelector('.gallery-dots');
+  // Dots live on the parent .pkg-galleries, not inside the gallery itself.
+  const group = gallery.closest('.pkg-galleries');
+  const dotsContainer = group && group.querySelector('.gallery-dots');
   if (dotsContainer) {
     [...dotsContainer.children].forEach((d, i) => d.classList.toggle('is-active', i === target));
   }
@@ -3973,6 +3979,26 @@ document.querySelectorAll('.pkg-galleries').forEach(group => {
     const cur = parseInt(active.dataset.current || '0', 10);
     goToSlide(active, cur + 1);
   });
+
+  // Touch swipe for mobile
+  let startX = null, startY = null;
+  group.addEventListener('touchstart', (e) => {
+    startX = e.changedTouches[0].clientX;
+    startY = e.changedTouches[0].clientY;
+  }, { passive: true });
+  group.addEventListener('touchend', (e) => {
+    if (startX === null) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    const dy = e.changedTouches[0].clientY - startY;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+      const active = group.querySelector('.pkg-gallery.is-active');
+      if (active) {
+        const cur = parseInt(active.dataset.current || '0', 10);
+        goToSlide(active, dx < 0 ? cur + 1 : cur - 1);
+      }
+    }
+    startX = startY = null;
+  }, { passive: true });
 
   // Observe class changes on galleries to rebuild dots when tab switches
   const mo = new MutationObserver(() => rebuildDots());
