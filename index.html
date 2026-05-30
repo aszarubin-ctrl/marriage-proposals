@@ -4064,7 +4064,7 @@ document.querySelectorAll('.pkg-galleries').forEach(group => {
 // by the time the user scrolls down — no blank slides on fast scroll.
 window.addEventListener('load', () => {
   const warm = () => {
-    document.querySelectorAll('.pkg-slide-img, .car-img-img, .team-photo img').forEach(img => {
+    document.querySelectorAll('img:not(.hero-photo-img)').forEach(img => {
       const src = img.getAttribute('src');
       if (src) { const pre = new Image(); pre.decoding = 'async'; pre.src = src; }
     });
