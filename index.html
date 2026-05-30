@@ -4058,6 +4058,21 @@ document.querySelectorAll('.pkg-galleries').forEach(group => {
   galleries.forEach(g => mo.observe(g, { attributes: true, attributeFilter: ['class'] }));
 });
 
+// ---------- Warm the cache for gallery images ----------
+// They stay loading="lazy" (keeps initial load light), but once the page
+// has loaded we prefetch them during idle time so they're already cached
+// by the time the user scrolls down — no blank slides on fast scroll.
+window.addEventListener('load', () => {
+  const warm = () => {
+    document.querySelectorAll('.pkg-slide-img, .car-img-img, .team-photo img').forEach(img => {
+      const src = img.getAttribute('src');
+      if (src) { const pre = new Image(); pre.decoding = 'async'; pre.src = src; }
+    });
+  };
+  if ('requestIdleCallback' in window) requestIdleCallback(warm, { timeout: 2500 });
+  else setTimeout(warm, 600);
+});
+
 // ---------- Add-ons + Cars (shared total) ----------
 function formatMoney(n) { return '$' + n.toLocaleString('en-US'); }
 const addonTotalEl = document.getElementById('addonTotal');
