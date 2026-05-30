@@ -1876,6 +1876,55 @@ h2.section-title em { font-style: italic; color: var(--emerald); }
 .sofia-byline .sep { color: var(--line-dot); }
 .sofia-byline .pin { width: 14px; height: 14px; color: var(--emerald); display: inline-flex; }
 
+/* ============ BLOCK 8 — TEAM ============ */
+.team {
+  background: var(--gray-bg);
+  padding-top: var(--pad-y);
+  padding-bottom: var(--pad-y);
+}
+.team-eyebrow {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  margin: 0 0 14px;
+}
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px 28px;
+}
+.team-card { margin: 0; text-align: center; }
+.team-photo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #e7e1d4;
+  box-shadow: 0 10px 30px rgba(10,25,47,0.10);
+}
+.team-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s var(--ease);
+}
+.team-card:hover .team-photo img { transform: scale(1.04); }
+.team-card figcaption { margin-top: 16px; }
+.team-name { display: block; font-weight: 700; color: var(--ink); font-size: 17px; }
+.team-role { display: block; color: var(--emerald); font-weight: 600; font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; margin-top: 3px; }
+@media (max-width: 820px) {
+  .team-grid { grid-template-columns: repeat(2, 1fr); gap: 24px 18px; }
+}
+@media (max-width: 420px) {
+  .team-grid { gap: 20px 14px; }
+  .team-name { font-size: 16px; }
+}
+
 /* ============ BLOCK 8 — FAQ ============ */
 .faq {
   background: var(--white);
@@ -2959,35 +3008,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 <!-- ============================================================ -->
-<section class="sofia" data-screen-label="08 Sofia" style="display:none">
+<section class="team" data-screen-label="08 Team">
   <div class="container">
-    <div class="sofia-grid">
-      <div class="sofia-collage reveal">
-        <div class="sc-main">
-          <image-slot id="sofia-main" shape="rect" radius="12" placeholder="Sofia at work — main reportage shot" style="position:absolute;inset:0;width:100%;height:100%;"></image-slot>
-          <span class="sc-cap">On set · setup hour</span>
-        </div>
-        <div class="sc-small">
-          <image-slot id="sofia-small-1" shape="rect" radius="12" placeholder="Sofia briefing the team / lighting candles" style="position:absolute;inset:0;width:100%;height:100%;"></image-slot>
-          <span class="sc-cap">Team brief</span>
-        </div>
-        <div class="sc-small">
-          <image-slot id="sofia-small-2" shape="rect" radius="12" placeholder="Sofia handing bouquet to groom" style="position:absolute;inset:0;width:100%;height:100%;"></image-slot>
-          <span class="sc-cap">Final touch</span>
-        </div>
-      </div>
-      <div class="sofia-text reveal" style="--i:1;">
-        <p class="sofia-eyebrow">Meet the team</p>
-        <p class="sofia-quote">I've been organizing marriage proposals in Punta Cana since 2020. I know exactly what can go wrong — from sudden tropical showers to late resort transfers — and I've built a team to make sure it never does. You're about to ask the most important question of your life. We take that responsibility seriously.</p>
-        <div class="sofia-byline">
-          <span><b>Sofia &amp; the team</b></span>
-          <span class="sep">·</span>
-          <span style="display:inline-flex;align-items:center;gap:6px;">
-            <svg class="pin" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8 2 5 5 5 9c0 5.3 7 13 7 13s7-7.7 7-13c0-4-3-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
-            Playa Bavaro, Punta Cana
-          </span>
-        </div>
-      </div>
+    <div class="section-head--center reveal">
+      <p class="team-eyebrow">Meet the team</p>
+      <h2 class="section-title">The people behind your <em>perfect moment</em></h2>
+      <p class="section-sub">A close-knit crew of planners, decorators, photographers and videographers — on the ground in Punta Cana since 2020, obsessed with getting every detail right.</p>
+    </div>
+
+    <div class="team-grid reveal-stagger">
+      <figure class="team-card reveal" style="--i:0;">
+        <div class="team-photo"><img src="project/team/yana.jpg" alt="Yana — Founder" loading="lazy" /></div>
+        <figcaption><span class="team-name">Yana</span><span class="team-role">Founder</span></figcaption>
+      </figure>
+      <figure class="team-card reveal" style="--i:1;">
+        <div class="team-photo"><img src="project/team/mikhail.jpg" alt="Mikhail — Founder and Decorator" loading="lazy" /></div>
+        <figcaption><span class="team-name">Mikhail</span><span class="team-role">Founder &amp; Decorator</span></figcaption>
+      </figure>
+      <figure class="team-card reveal" style="--i:2;">
+        <div class="team-photo"><img src="project/team/heloise.jpg" alt="Héloïse — Coordinator" loading="lazy" /></div>
+        <figcaption><span class="team-name">Héloïse</span><span class="team-role">Coordinator</span></figcaption>
+      </figure>
+      <figure class="team-card reveal" style="--i:3;">
+        <div class="team-photo"><img src="project/team/niko.jpg" alt="Niko — Photographer" loading="lazy" /></div>
+        <figcaption><span class="team-name">Niko</span><span class="team-role">Photographer</span></figcaption>
+      </figure>
+      <figure class="team-card reveal" style="--i:4;">
+        <div class="team-photo"><img src="project/team/viktor.jpg" alt="Viktor — Photographer" loading="lazy" /></div>
+        <figcaption><span class="team-name">Viktor</span><span class="team-role">Photographer</span></figcaption>
+      </figure>
+      <figure class="team-card reveal" style="--i:5;">
+        <div class="team-photo"><img src="project/team/denis.jpg" alt="Denis — Videographer" loading="lazy" /></div>
+        <figcaption><span class="team-name">Denis</span><span class="team-role">Videographer</span></figcaption>
+      </figure>
     </div>
   </div>
 </section>
