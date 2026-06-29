@@ -633,10 +633,15 @@ a { transition: all .3s ease; }
   .site-header__actions { gap: 8px; }
   .btn-whatsapp,
   .btn-email {
-    padding: 9px;
+    padding: 11px;
     gap: 0;
-    width: 34px;
-    height: 34px;
+    width: 44px;
+    height: 44px;
+  }
+  .btn-whatsapp svg,
+  .btn-email svg {
+    width: 20px;
+    height: 20px;
   }
   .btn-whatsapp span,
   .btn-email span { display: none; }
