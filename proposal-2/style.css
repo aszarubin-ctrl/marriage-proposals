@@ -66,15 +66,20 @@ a { transition: all .3s ease; }
   text-decoration: none;
 }
 
-.btn-whatsapp {
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-whatsapp,
+.btn-email {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 9px;
   padding: 9px 18px;
-  border: 1px solid var(--gold);
   border-radius: 999px;
-  color: var(--gold-bright);
   text-decoration: none;
   font-size: 12px;
   font-weight: 500;
@@ -82,7 +87,21 @@ a { transition: all .3s ease; }
   text-transform: uppercase;
 }
 
-.btn-whatsapp:hover { background: var(--gold); color: #1B1610; }
+.btn-whatsapp {
+  border: 1px solid #25D366;
+  background: #25D366;
+  color: #0B1F12;
+}
+
+.btn-whatsapp:hover { background: transparent; color: #25D366; }
+
+.btn-email {
+  border: 1px solid #2196F3;
+  background: #2196F3;
+  color: #0B1726;
+}
+
+.btn-email:hover { background: transparent; color: #2196F3; }
 
 /* ============ HERO ============ */
 .hero {
